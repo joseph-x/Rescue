@@ -1,0 +1,14 @@
+extends Node
+
+enum CHARACTER_TYPE {
+	PATIENT,
+	STAFF
+}
+
+enum CRISIS_LEVEL {
+	IDLE,
+	LOW,
+	MEDIUM,
+	HIGH,
+	CRITICAL
+}

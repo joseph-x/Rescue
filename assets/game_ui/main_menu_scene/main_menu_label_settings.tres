@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://cy64apb7uyknu"]
+
+[ext_resource type="FontFile" uid="uid://c2282cd7pujst" path="res://fonts/MiSans/MiSans-Heavy.ttf" id="1_14cbw"]
+
+[resource]
+font = ExtResource("1_14cbw")
+font_size = 24

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://gwe4mib2p30x"]
+
+[ext_resource type="FontFile" uid="uid://c2282cd7pujst" path="res://fonts/MiSans/MiSans-Heavy.ttf" id="1_ydr62"]
+[ext_resource type="Texture2D" uid="uid://db7b03db6spdx" path="res://assets/game_ui/game_scene/crisis_bar.png" id="2_6lfqj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j6s53"]
+font = ExtResource("1_ydr62")
+font_size = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmtvo"]
+atlas = ExtResource("2_6lfqj")
+region = Rect2(80, 0, 40, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_201br"]
+atlas = ExtResource("2_6lfqj")
+region = Rect2(80, 0, 40, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6s53"]
+atlas = ExtResource("2_6lfqj")
+region = Rect2(80, 0, 40, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgii4"]
+atlas = ExtResource("2_6lfqj")
+region = Rect2(120, 0, 40, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqmgi"]
+atlas = ExtResource("2_6lfqj")
+region = Rect2(120, 0, 40, 12)
+
+[node name="CrisisBar" type="VBoxContainer" unique_id=714223237]
+offset_left = 1672.0
+offset_top = 25.5
+offset_right = 1888.0
+offset_bottom = 65.5
+
+[node name="CrisisiLabel" type="Label" parent="." unique_id=628457120]
+layout_mode = 2
+text = "CRITICAL"
+label_settings = SubResource("LabelSettings_j6s53")
+
+[node name="CrisisBarIndicator" type="HBoxContainer" parent="." unique_id=1666049204]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="CrisisBar_1" type="TextureRect" parent="CrisisBarIndicator" unique_id=1121109932]
+layout_mode = 2
+texture = SubResource("AtlasTexture_wmtvo")
+
+[node name="CrisisBar_2" type="TextureRect" parent="CrisisBarIndicator" unique_id=983487316]
+layout_mode = 2
+texture = SubResource("AtlasTexture_201br")
+
+[node name="CrisisBar_3" type="TextureRect" parent="CrisisBarIndicator" unique_id=1786694394]
+layout_mode = 2
+texture = SubResource("AtlasTexture_j6s53")
+
+[node name="CrisisBar_4" type="TextureRect" parent="CrisisBarIndicator" unique_id=213264378]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dgii4")
+
+[node name="CrisisBar_5" type="TextureRect" parent="CrisisBarIndicator" unique_id=1909764685]
+layout_mode = 2
+texture = SubResource("AtlasTexture_hqmgi")

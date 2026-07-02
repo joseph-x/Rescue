@@ -1,0 +1,262 @@
+[gd_scene format=3 uid="uid://c8u8y0ve3ck10"]
+
+[ext_resource type="Script" uid="uid://he7mx1i1iqh6" path="res://scenes/main_menu_scene/main_menu_scene.gd" id="1_goipo"]
+[ext_resource type="Texture2D" uid="uid://c8t1iicqa1m8l" path="res://assets/game_ui/main_menu_scene/main_menu_bg.png" id="3_7ehqg"]
+[ext_resource type="PackedScene" uid="uid://ceceooot36cxs" path="res://prefabs/status_bar/status_bar.tscn" id="3_xyvi8"]
+[ext_resource type="Script" uid="uid://dwiwwdl5b7hr2" path="res://prefabs/status_bar/status_bar.gd" id="4_7ehqg"]
+[ext_resource type="Texture2D" uid="uid://suka33tpy01b" path="res://assets/game_ui/common/header_bg.png" id="6_2ydgd"]
+[ext_resource type="Texture2D" uid="uid://dauqupdw8syy1" path="res://assets/game_ui/main_menu_scene/sidebar.png" id="6_o6ex8"]
+[ext_resource type="Script" uid="uid://be4i34qed07vl" path="res://scenes/main_menu_scene/item_group.gd" id="7_73jw0"]
+[ext_resource type="PackedScene" uid="uid://4553nje2erhd" path="res://prefabs/main_menu_item/main_menu_item.tscn" id="7_j1m8r"]
+[ext_resource type="Texture2D" uid="uid://bdaid8w04jvun" path="res://assets/game_ui/common/game_logo.png" id="7_yjab5"]
+[ext_resource type="FontFile" uid="uid://chfo04v68n46w" path="res://fonts/MiSans/MiSans-Medium.ttf" id="8_b3tnh"]
+[ext_resource type="Texture2D" uid="uid://cs0m6mb6i6sdf" path="res://assets/game_ui/credit/credit_icon.png" id="8_e5nxg"]
+[ext_resource type="Texture2D" uid="uid://bw2sapvtrv71w" path="res://assets/game_ui/user/avatar.png" id="8_i042j"]
+[ext_resource type="Texture2D" uid="uid://cavdnyore1pw2" path="res://assets/game_ui/common/header_separator.png" id="9_e5nxg"]
+[ext_resource type="FontFile" uid="uid://cdf4kb2fh0ltl" path="res://fonts/MiSans/MiSans-Regular.ttf" id="9_v5l41"]
+[ext_resource type="Texture2D" uid="uid://bwtc0ghk81xdp" path="res://assets/game_ui/main_menu_scene/main_container.png" id="10_na6no"]
+[ext_resource type="Texture2D" uid="uid://cloopynusmxjt" path="res://assets/game_ui/main_menu_scene/map_area.png" id="11_3w857"]
+[ext_resource type="FontFile" uid="uid://c2282cd7pujst" path="res://fonts/MiSans/MiSans-Heavy.ttf" id="12_khq1u"]
+[ext_resource type="Texture2D" uid="uid://ckf6wrgmfqsv6" path="res://assets/game_ui/main_menu_scene/arrow-right.png" id="13_5pqrq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rtyko"]
+font = ExtResource("8_b3tnh")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_v5l41"]
+font = ExtResource("8_b3tnh")
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_e5nxg"]
+font = ExtResource("9_v5l41")
+font_size = 11
+font_color = Color(1, 0.54901963, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5pqrq"]
+font = ExtResource("12_khq1u")
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_3cias"]
+font = ExtResource("9_v5l41")
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khq1u"]
+bg_color = Color(0.9098039, 0, 0.101960786, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pqrq"]
+bg_color = Color(0.9098039, 0, 0.101960786, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjab5"]
+bg_color = Color(0.8788864, 0, 0.096904, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_khq1u"]
+font = ExtResource("12_khq1u")
+font_size = 32
+
+[node name="MainMenuScene" type="Node2D" unique_id=1007422546]
+script = ExtResource("1_goipo")
+
+[node name="BGLayer" type="CanvasLayer" parent="." unique_id=1015591254]
+
+[node name="Background" type="Sprite2D" parent="BGLayer" unique_id=2084999908]
+texture = ExtResource("3_7ehqg")
+offset = Vector2(960, 540)
+
+[node name="StatusBar" parent="BGLayer" unique_id=317304889 instance=ExtResource("3_xyvi8")]
+position = Vector2(0, 1016)
+script = ExtResource("4_7ehqg")
+
+[node name="Header" type="CanvasLayer" parent="." unique_id=439940280]
+
+[node name="Header" type="Sprite2D" parent="Header" unique_id=1656384425]
+texture = ExtResource("6_2ydgd")
+offset = Vector2(960, 44)
+
+[node name="Sprite2D" type="Sprite2D" parent="Header/Header" unique_id=3835829]
+position = Vector2(0, 4)
+texture = ExtResource("7_yjab5")
+offset = Vector2(130, 40)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header/Header" unique_id=175371152]
+offset_left = 1480.0
+offset_top = 20.0
+offset_right = 1880.0
+offset_bottom = 68.0
+theme_override_constants/separation = 32
+alignment = 2
+
+[node name="CreditInfo" type="HBoxContainer" parent="Header/Header/HBoxContainer" unique_id=880060651]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="Header/Header/HBoxContainer/CreditInfo" unique_id=514093659]
+layout_mode = 2
+texture = ExtResource("8_e5nxg")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Header/Header/HBoxContainer/CreditInfo" unique_id=359709339]
+layout_mode = 2
+text = "999999"
+label_settings = SubResource("LabelSettings_rtyko")
+
+[node name="TextureRect" type="TextureRect" parent="Header/Header/HBoxContainer" unique_id=549010132]
+layout_mode = 2
+texture = ExtResource("9_e5nxg")
+
+[node name="UserInfo" type="HBoxContainer" parent="Header/Header/HBoxContainer" unique_id=640070007]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="AvatarInfo" type="VBoxContainer" parent="Header/Header/HBoxContainer/UserInfo" unique_id=150884237]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="UserNameLabel" type="Label" parent="Header/Header/HBoxContainer/UserInfo/AvatarInfo" unique_id=415927290]
+layout_mode = 2
+text = "MEDIC_ALPHA"
+label_settings = SubResource("LabelSettings_v5l41")
+horizontal_alignment = 2
+
+[node name="LevelNameLabel" type="Label" parent="Header/Header/HBoxContainer/UserInfo/AvatarInfo" unique_id=1650781365]
+layout_mode = 2
+text = "★ 见习医生"
+label_settings = SubResource("LabelSettings_e5nxg")
+horizontal_alignment = 2
+
+[node name="Avatar" type="TextureRect" parent="Header/Header/HBoxContainer/UserInfo" unique_id=2078720894]
+layout_mode = 2
+texture = ExtResource("8_i042j")
+
+[node name="ActionUILayer" type="CanvasLayer" parent="." unique_id=1012548975]
+
+[node name="SideNav" type="Sprite2D" parent="ActionUILayer" unique_id=619060392]
+position = Vector2(0, 88)
+texture = ExtResource("6_o6ex8")
+offset = Vector2(270, 464)
+
+[node name="ItemGroup" type="VBoxContainer" parent="ActionUILayer/SideNav" unique_id=1196170766]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+script = ExtResource("7_73jw0")
+
+[node name="MainMenuItem" parent="ActionUILayer/SideNav/ItemGroup" unique_id=18904225 instance=ExtResource("7_j1m8r")]
+layout_mode = 2
+is_selected = true
+
+[node name="MainMenuItem2" parent="ActionUILayer/SideNav/ItemGroup" unique_id=1317686435 instance=ExtResource("7_j1m8r")]
+layout_mode = 2
+item_type = 1
+
+[node name="MainMenuItem3" parent="ActionUILayer/SideNav/ItemGroup" unique_id=2015889376 instance=ExtResource("7_j1m8r")]
+layout_mode = 2
+item_type = 2
+
+[node name="MainMenuItem4" parent="ActionUILayer/SideNav/ItemGroup" unique_id=1335294152 instance=ExtResource("7_j1m8r")]
+layout_mode = 2
+item_type = 3
+
+[node name="MainMenuItem5" parent="ActionUILayer/SideNav/ItemGroup" unique_id=882604667 instance=ExtResource("7_j1m8r")]
+layout_mode = 2
+item_type = 4
+
+[node name="MainMenuItem6" parent="ActionUILayer/SideNav/ItemGroup" unique_id=441296135 instance=ExtResource("7_j1m8r")]
+layout_mode = 2
+item_type = 5
+
+[node name="MainMenuItem7" parent="ActionUILayer/SideNav/ItemGroup" unique_id=1320734912 instance=ExtResource("7_j1m8r")]
+layout_mode = 2
+item_type = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ActionUILayer/SideNav/ItemGroup" unique_id=1146504527]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DemoButton" type="Button" parent="ActionUILayer/SideNav/ItemGroup" unique_id=110915252]
+layout_mode = 2
+text = "Demo Scene"
+
+[node name="NPCEditorButton" type="Button" parent="ActionUILayer/SideNav/ItemGroup" unique_id=535377976]
+layout_mode = 2
+text = "NPC Editor"
+
+[node name="MainMenuItem8" parent="ActionUILayer/SideNav/ItemGroup" unique_id=705890684 instance=ExtResource("7_j1m8r")]
+layout_mode = 2
+item_type = 7
+
+[node name="MainContainer" type="Sprite2D" parent="ActionUILayer" unique_id=1454892816]
+position = Vector2(540, 88)
+texture = ExtResource("10_na6no")
+offset = Vector2(690, 464)
+
+[node name="MapArea" type="Sprite2D" parent="ActionUILayer/MainContainer" unique_id=1766295672]
+position = Vector2(48, 48)
+texture = ExtResource("11_3w857")
+offset = Vector2(642, 350)
+
+[node name="MainTitleLabel" type="Label" parent="ActionUILayer/MainContainer/MapArea" unique_id=647242923]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 183.0
+offset_bottom = 115.0
+text = "CITY IN CRISIS"
+label_settings = SubResource("LabelSettings_5pqrq")
+
+[node name="DescriptionLabel" type="Label" parent="ActionUILayer/MainContainer/MapArea" unique_id=1529533809]
+offset_left = 40.0
+offset_top = 122.0
+offset_right = 109.0
+offset_bottom = 144.0
+text = "Shanghai"
+label_settings = SubResource("LabelSettings_3cias")
+
+[node name="PlayButton" type="Button" parent="ActionUILayer/MainContainer" unique_id=1880947350]
+offset_left = 48.0
+offset_top = 780.0
+offset_right = 1332.0
+offset_bottom = 880.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_khq1u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5pqrq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yjab5")
+
+[node name="PrimaryLabel" type="Label" parent="ActionUILayer/MainContainer/PlayButton" unique_id=425351318]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 240.0
+offset_bottom = 60.0
+text = "进入调度中心"
+label_settings = SubResource("LabelSettings_khq1u")
+
+[node name="SecondnaryLabel" type="Label" parent="ActionUILayer/MainContainer/PlayButton" unique_id=1566296147]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 62.0
+offset_right = 335.0
+offset_bottom = 85.0
+text = "ENTER DISPATCH COMMAND CENTER"
+
+[node name="TextureRect" type="TextureRect" parent="ActionUILayer/MainContainer/PlayButton" unique_id=2128965667]
+layout_mode = 0
+offset_left = 1196.0
+offset_top = 30.0
+offset_right = 1236.0
+offset_bottom = 70.0
+texture = ExtResource("13_5pqrq")

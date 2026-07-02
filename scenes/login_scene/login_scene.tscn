@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bb6a1kexh3f5j"]
+
+[ext_resource type="Texture2D" uid="uid://bdk53kwtralml" path="res://assets/blueprint/game-login-screen.png" id="1_i7h7o"]
+
+[node name="LoginScene" type="Node2D" unique_id=1897235908]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=328079147]
+modulate = Color(1, 1, 1, 0.3137255)
+texture = ExtResource("1_i7h7o")
+offset = Vector2(960, 540)

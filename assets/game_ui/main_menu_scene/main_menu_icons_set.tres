@@ -1,0 +1,26 @@
+[gd_resource type="TileSet" format=3 uid="uid://bmk6h0y8qa0qi"]
+
+[ext_resource type="Texture2D" uid="uid://b0qc88ytyx33b" path="res://assets/game_ui/main_menu_scene/main_icons.png" id="1_p7ley"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jp8fj"]
+texture = ExtResource("1_p7ley")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_jp8fj")

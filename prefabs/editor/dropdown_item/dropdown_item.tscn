@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dytppns0ilsif"]
+
+[ext_resource type="Script" uid="uid://cqd6xbsjnhmu8" path="res://prefabs/editor/dropdown_item/dropdown_item.gd" id="1_og0lk"]
+
+[node name="DropdownItem" type="VBoxContainer" unique_id=118958852]
+theme_override_constants/separation = 8
+script = ExtResource("1_og0lk")
+
+[node name="Label" type="Label" parent="." unique_id=1286114802]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5882353)
+text = "Label"
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=1414811702]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2

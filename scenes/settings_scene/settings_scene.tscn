@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c3vxr574whplr"]
+
+[ext_resource type="Texture2D" uid="uid://do8n7kmud0kgt" path="res://assets/blueprint/game-settings.png" id="1_c8af2"]
+
+[node name="SettingsScene" type="Node2D" unique_id=681978756]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1578765565]
+modulate = Color(1, 1, 1, 0.39215687)
+texture = ExtResource("1_c8af2")
+offset = Vector2(960, 540)

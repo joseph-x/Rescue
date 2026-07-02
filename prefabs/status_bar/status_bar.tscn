@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ceceooot36cxs"]
+
+[ext_resource type="Texture2D" uid="uid://pnnlx81vjagi" path="res://assets/game_ui/common/status_bar.png" id="1_tlkt1"]
+[ext_resource type="FontFile" uid="uid://cdf4kb2fh0ltl" path="res://fonts/MiSans/MiSans-Regular.ttf" id="2_xne38"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_puq0p"]
+font = ExtResource("2_xne38")
+font_size = 12
+font_color = Color(0.5803922, 0.5803922, 0.5803922, 1)
+
+[node name="StatusBar" type="Sprite2D" unique_id=317304889]
+texture = ExtResource("1_tlkt1")
+offset = Vector2(960, 32)
+
+[node name="Label" type="Label" parent="." unique_id=1890893530]
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 108.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.5803922, 0.5803922, 0.5803922, 1)
+text = "v.0.1.0 BETA"
+label_settings = SubResource("LabelSettings_puq0p")

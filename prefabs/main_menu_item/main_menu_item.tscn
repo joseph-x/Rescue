@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://4553nje2erhd"]
+
+[ext_resource type="Texture2D" uid="uid://bnxlfolmwtvnu" path="res://assets/game_ui/main_menu_scene/main_menu_item_bg_selected.png" id="1_q3w1w"]
+[ext_resource type="LabelSettings" uid="uid://cy64apb7uyknu" path="res://assets/game_ui/main_menu_scene/main_menu_label_settings.tres" id="2_b2u6k"]
+[ext_resource type="Script" uid="uid://csghtiy48ddpc" path="res://prefabs/main_menu_item/main_menu_item.gd" id="2_qjo5w"]
+[ext_resource type="FontFile" uid="uid://chfo04v68n46w" path="res://fonts/MiSans/MiSans-Medium.ttf" id="3_qjo5w"]
+[ext_resource type="Texture2D" uid="uid://b0qc88ytyx33b" path="res://assets/game_ui/main_menu_scene/main_icons.png" id="4_mife1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pqrq"]
+atlas = ExtResource("4_mife1")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v5l41"]
+font = ExtResource("3_qjo5w")
+font_size = 12
+font_color = Color(0.9098039, 0, 0.101960786, 1)
+
+[node name="MainMenuItem" type="Container" unique_id=18904225]
+custom_minimum_size = Vector2(540, 80)
+script = ExtResource("2_qjo5w")
+
+[node name="Background" type="TextureRect" parent="." unique_id=938008463]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_q3w1w")
+
+[node name="Icon" type="TextureRect" parent="Background" unique_id=541752718]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 72.0
+offset_bottom = 64.0
+texture = SubResource("AtlasTexture_5pqrq")
+
+[node name="SecondnaryLabel" type="Label" parent="Background" unique_id=2120242729]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 49.0
+offset_right = 175.0
+offset_bottom = 66.0
+text = "START MISSION"
+label_settings = SubResource("LabelSettings_v5l41")
+metadata/_edit_use_anchors_ = true
+
+[node name="PrimaryLabel" type="Label" parent="Background" unique_id=314029839]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 15.0
+offset_right = 180.0
+offset_bottom = 48.0
+text = "开始任务"
+label_settings = ExtResource("2_b2u6k")
+metadata/_edit_use_anchors_ = true

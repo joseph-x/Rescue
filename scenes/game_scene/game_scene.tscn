@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bidu70vsdnmtv"]
+
+[ext_resource type="Script" uid="uid://5rk1y0e5wnxh" path="res://scenes/game_scene/game_scene.gd" id="1_pwder"]
+[ext_resource type="Texture2D" uid="uid://d1e1n30vrbu0s" path="res://assets/blueprint/game-main-gameplay.png" id="2_72663"]
+[ext_resource type="Texture2D" uid="uid://bowql07wmq5dg" path="res://assets/game_ui/game_scene/action_bar_bg.png" id="3_o81xq"]
+[ext_resource type="PackedScene" uid="uid://gwe4mib2p30x" path="res://prefabs/crisis_bar/crisis_bar.tscn" id="4_201br"]
+[ext_resource type="Texture2D" uid="uid://beu50owbwa4jp" path="res://assets/game_ui/game_scene/disease_queue_bg.png" id="4_xb203"]
+[ext_resource type="Texture2D" uid="uid://4dmklbohhkjn" path="res://assets/game_ui/game_scene/resource_bg.png" id="5_ducuf"]
+[ext_resource type="Script" uid="uid://cnukvw4o40wc8" path="res://prefabs/crisis_bar/crisis_bar.gd" id="5_j6s53"]
+[ext_resource type="Texture2D" uid="uid://d0evbt4sq33hd" path="res://assets/game_ui/game_scene/header_bg.png" id="6_j8flk"]
+[ext_resource type="FontFile" uid="uid://c2282cd7pujst" path="res://fonts/MiSans/MiSans-Heavy.ttf" id="9_j6s53"]
+
+[node name="GameScene" type="Node2D" unique_id=45467288]
+script = ExtResource("1_pwder")
+
+[node name="Blueprint" type="Sprite2D" parent="." unique_id=1552915808]
+visible = false
+modulate = Color(1, 1, 1, 0.39215687)
+texture = ExtResource("2_72663")
+offset = Vector2(960, 540)
+
+[node name="MapLayer" type="CanvasLayer" parent="." unique_id=1373919340]
+
+[node name="HUDLayer" type="CanvasLayer" parent="." unique_id=207528291]
+
+[node name="ActionPanel" type="Sprite2D" parent="HUDLayer" unique_id=1807006454]
+position = Vector2(0, 1000)
+texture = ExtResource("3_o81xq")
+offset = Vector2(960, 40)
+
+[node name="CrisisBar" parent="HUDLayer/ActionPanel" unique_id=714223237 instance=ExtResource("4_201br")]
+script = ExtResource("5_j6s53")
+
+[node name="QueuePanel" type="Sprite2D" parent="HUDLayer" unique_id=526985974]
+position = Vector2(0, 64)
+texture = ExtResource("4_xb203")
+offset = Vector2(144, 468)
+
+[node name="ResourcePanel" type="Sprite2D" parent="HUDLayer" unique_id=1547931508]
+position = Vector2(1632, 64)
+texture = ExtResource("5_ducuf")
+offset = Vector2(144, 468)
+
+[node name="Sprite2D" type="Sprite2D" parent="HUDLayer" unique_id=442480454]
+texture = ExtResource("6_j8flk")
+offset = Vector2(960, 32)
+
+[node name="MenuLayer" type="CanvasLayer" parent="." unique_id=333900680]
+
+[node name="ColorRect" type="ColorRect" parent="MenuLayer" unique_id=991171022]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 600.0
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="MenuContainer" type="VBoxContainer" parent="MenuLayer/ColorRect" unique_id=351058239]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 240.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="MenuContinueButton" type="Button" parent="MenuLayer/ColorRect/MenuContainer" unique_id=1605121765]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_j6s53")
+theme_override_font_sizes/font_size = 24
+text = "继续游戏"
+
+[node name="MenuBack2MainMenuButton" type="Button" parent="MenuLayer/ColorRect/MenuContainer" unique_id=1364121930]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_j6s53")
+theme_override_font_sizes/font_size = 24
+text = "返回到主菜单"
+
+[node name="MenuExitGameButton" type="Button" parent="MenuLayer/ColorRect/MenuContainer" unique_id=945983040]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_j6s53")
+theme_override_font_sizes/font_size = 24
+text = "退出游戏"
