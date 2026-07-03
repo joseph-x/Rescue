@@ -12,3 +12,11 @@ enum CRISIS_LEVEL {
 	HIGH,
 	CRITICAL
 }
+
+# 游戏速度倍率
+enum GAME_SPEED {
+	PAUSED = 0,
+	NORMAL = 1,
+	FAST = 2,
+	FASTEST = 4
+}
