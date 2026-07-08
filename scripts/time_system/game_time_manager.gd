@@ -1,34 +1,70 @@
 extends Node
 class_name GameTimeManager
 
-# 游戏时间状态
-var current_tick: int = 0
-var current_minute: int = 0
-var current_hour: int = 8
-var current_day: int = 1
-var current_shift: int = 1
 
-# 当前游戏速度
-var current_speed: int = EnumGlobal.GAME_SPEED.NORMAL
-
-# 计时器
-var tick_timer: Timer = Timer.new()
-
-# 时间事件注册表 (时间间隔 -> 回调列表)
-var tick_events: Dictionary = {}
-var minute_events: Dictionary = {}
-var hour_events: Dictionary = {}
-var shift_events: Dictionary = {}
-var day_events: Dictionary = {}
-
-# 信号定义
-signal time_tick(tick: int, minute: int, hour: int, day: int)
-signal minute_passed(minute: int, hour: int, day: int)
-signal hour_passed(hour: int, day: int)
-signal shift_changed(shift: int, day: int)
+signal minute_changed(hour: int, minute: int)
+signal hour_changed(hour: int)
 signal day_changed(day: int)
-signal speed_changed(speed: int)
+
+@export var real_seconds_per_game_minute := 0.05
+@export var start_hour := 0
+@export var start_minute := 0
+
+var day := 0
+var hour := 0
+var minute := 0
+
+var _accumulator := 0.0
+var _paused := false
+var time_scale := 1.0
 
 
-func _ready() -> void:
-	pass
+# 游戏速度倍率
+enum GAME_SPEED {
+	PAUSED = 0,
+	NORMAL = 1,
+	FAST = 2,
+	FASTEST = 4
+}
+
+
+func _ready():
+	hour = start_hour
+	minute = start_minute
+
+func _process(delta: float) -> void:
+	if _paused:
+		return
+
+	_accumulator += delta * time_scale
+
+	while _accumulator >= real_seconds_per_game_minute:
+		_accumulator -= real_seconds_per_game_minute
+		_add_minute()
+
+func _add_minute() -> void:
+	minute += 1
+
+	if minute >= 60:
+		minute = 0
+		hour += 1
+		hour_changed.emit(hour)
+
+	if hour >= 24:
+		hour = 0
+		day += 1
+		day_changed.emit(day)
+
+	minute_changed.emit(hour, minute)
+
+func pause_time():
+	_paused = true
+
+func resume_time():
+	_paused = false
+
+func set_time_scale(value: float):
+	time_scale = max(value, 0.0)
+
+func get_time_text() -> String:
+	return "%02d:%02d:%02d" % [day, hour, minute]

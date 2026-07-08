@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://beu50owbwa4jp" path="res://assets/game_ui/game_scene/disease_queue_bg.png" id="4_xb203"]
 [ext_resource type="Texture2D" uid="uid://4dmklbohhkjn" path="res://assets/game_ui/game_scene/resource_bg.png" id="5_ducuf"]
 [ext_resource type="Script" uid="uid://cnukvw4o40wc8" path="res://prefabs/crisis_bar/crisis_bar.gd" id="5_j6s53"]
+[ext_resource type="PackedScene" uid="uid://b6lkv0qocdlry" path="res://prefabs/time_bar/time_bar.tscn" id="6_hqmgi"]
 [ext_resource type="Texture2D" uid="uid://d0evbt4sq33hd" path="res://assets/game_ui/game_scene/header_bg.png" id="6_j8flk"]
 [ext_resource type="FontFile" uid="uid://c2282cd7pujst" path="res://fonts/MiSans/MiSans-Heavy.ttf" id="9_j6s53"]
+[ext_resource type="Script" uid="uid://dw4kmvven5xn1" path="res://scripts/game_manager.gd" id="10_dgii4"]
+[ext_resource type="Script" uid="uid://b2hfy47uc4fs7" path="res://scripts/time_system/game_time_manager.gd" id="12_3di6p"]
 
 [node name="GameScene" type="Node2D" unique_id=45467288]
 script = ExtResource("1_pwder")
@@ -30,6 +33,8 @@ offset = Vector2(960, 40)
 
 [node name="CrisisBar" parent="HUDLayer/ActionPanel" unique_id=714223237 instance=ExtResource("4_201br")]
 script = ExtResource("5_j6s53")
+
+[node name="TimeBar" parent="HUDLayer/ActionPanel" unique_id=1747697956 instance=ExtResource("6_hqmgi")]
 
 [node name="QueuePanel" type="Sprite2D" parent="HUDLayer" unique_id=526985974]
 position = Vector2(0, 64)
@@ -89,3 +94,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("9_j6s53")
 theme_override_font_sizes/font_size = 24
 text = "退出游戏"
+
+[node name="GameManager" type="Node" parent="." unique_id=431203173]
+script = ExtResource("10_dgii4")
+
+[node name="GameTimeManager" type="Node" parent="GameManager" unique_id=268804420]
+script = ExtResource("12_3di6p")

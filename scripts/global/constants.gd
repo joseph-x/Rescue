@@ -11,3 +11,9 @@ const SCENE_PATHS: Dictionary = {
 }
 
 const DEBUG_MODE: bool = true
+
+# 时间系统配置
+const GAME_TICK_INTERVAL: float = 0.5  # 每个游戏tick的时间间隔(秒)
+const MINUTES_PER_TICK: int = 1        # 每个tick代表的游戏分钟数
+const HOURS_PER_SHIFT: int = 8         # 每个班次的小时数
+const HOURS_PER_DAY: int = 24          # 每天的小时数

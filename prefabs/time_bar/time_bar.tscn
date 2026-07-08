@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b6lkv0qocdlry"]
+
+[ext_resource type="FontFile" uid="uid://chfo04v68n46w" path="res://fonts/MiSans/MiSans-Medium.ttf" id="1_jlil6"]
+[ext_resource type="Script" uid="uid://ho70wpnwaw0h" path="res://prefabs/time_bar/time_bar.gd" id="1_n7bkl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3di6p"]
+font = ExtResource("1_jlil6")
+font_size = 12
+font_color = Color(0.5803922, 0.5803922, 0.5803922, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dgii4"]
+font = ExtResource("1_jlil6")
+font_size = 24
+
+[node name="TimeBar" type="VBoxContainer" unique_id=1747697956]
+offset_left = 1545.0
+offset_top = 16.0
+offset_right = 1636.0
+offset_bottom = 63.0
+theme_override_constants/separation = 0
+script = ExtResource("1_n7bkl")
+
+[node name="Label" type="Label" parent="." unique_id=638797917]
+layout_mode = 2
+text = "班次时间"
+label_settings = SubResource("LabelSettings_3di6p")
+
+[node name="TimeLabel" type="Label" parent="." unique_id=1611234330]
+layout_mode = 2
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_dgii4")
