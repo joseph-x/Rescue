@@ -10,14 +10,24 @@
 [ext_resource type="PackedScene" uid="uid://b6lkv0qocdlry" path="res://prefabs/time_bar/time_bar.tscn" id="6_hqmgi"]
 [ext_resource type="Texture2D" uid="uid://d0evbt4sq33hd" path="res://assets/game_ui/game_scene/header_bg.png" id="6_j8flk"]
 [ext_resource type="FontFile" uid="uid://c2282cd7pujst" path="res://fonts/MiSans/MiSans-Heavy.ttf" id="9_j6s53"]
+[ext_resource type="FontFile" uid="uid://chfo04v68n46w" path="res://fonts/MiSans/MiSans-Medium.ttf" id="9_jytbd"]
 [ext_resource type="Script" uid="uid://dw4kmvven5xn1" path="res://scripts/game_manager.gd" id="10_dgii4"]
-[ext_resource type="Script" uid="uid://b2hfy47uc4fs7" path="res://scripts/time_system/game_time_manager.gd" id="12_3di6p"]
+[ext_resource type="Script" uid="uid://b2hfy47uc4fs7" path="res://scripts/framework/game_time_manager.gd" id="12_3di6p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iprv4"]
+font = ExtResource("9_jytbd")
+font_size = 12
+font_color = Color(0.9098039, 0, 0.101960786, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ypwy"]
+font = ExtResource("9_jytbd")
+font_size = 12
+font_color = Color(0, 0.4, 0.8, 1)
 
 [node name="GameScene" type="Node2D" unique_id=45467288]
 script = ExtResource("1_pwder")
 
 [node name="Blueprint" type="Sprite2D" parent="." unique_id=1552915808]
-visible = false
 modulate = Color(1, 1, 1, 0.39215687)
 texture = ExtResource("2_72663")
 offset = Vector2(960, 540)
@@ -46,11 +56,35 @@ position = Vector2(1632, 64)
 texture = ExtResource("5_ducuf")
 offset = Vector2(144, 468)
 
+[node name="VBoxContainer" type="VBoxContainer" parent="HUDLayer/ResourcePanel" unique_id=286428465]
+custom_minimum_size = Vector2(256, 0)
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 272.0
+offset_bottom = 916.0
+size_flags_horizontal = 3
+
+[node name="UnitLabel" type="Label" parent="HUDLayer/ResourcePanel/VBoxContainer" unique_id=597370222]
+layout_mode = 2
+text = "单位状态"
+label_settings = SubResource("LabelSettings_iprv4")
+
+[node name="HospitalLabel" type="Label" parent="HUDLayer/ResourcePanel/VBoxContainer" unique_id=473380636]
+layout_mode = 2
+text = "资源资源"
+label_settings = SubResource("LabelSettings_1ypwy")
+
+[node name="ColorRect" type="ColorRect" parent="HUDLayer/ResourcePanel/VBoxContainer" unique_id=220115049]
+custom_minimum_size = Vector2(0, 43)
+layout_mode = 2
+color = Color(1, 1, 1, 0.078431375)
+
 [node name="Sprite2D" type="Sprite2D" parent="HUDLayer" unique_id=442480454]
 texture = ExtResource("6_j8flk")
 offset = Vector2(960, 32)
 
 [node name="MenuLayer" type="CanvasLayer" parent="." unique_id=333900680]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="MenuLayer" unique_id=991171022]
 anchors_preset = 9
