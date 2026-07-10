@@ -1,11 +1,7 @@
-extends Node
+extends BaseRuntime
 class_name BuildingRuntime
 
-@export var instance_id: String
-@export var data_id: String
-
 @export var grid_position: Vector2i
-
 
 func to_save_data() -> Dictionary:
 	var data: Dictionary = {

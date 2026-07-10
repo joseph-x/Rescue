@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://tu40c7nu56gk"]
+
+[ext_resource type="Script" uid="uid://bs7rem3cb2r7q" path="res://scripts/data/item_data.gd" id="1_cj8q6"]
+
+[resource]
+script = ExtResource("1_cj8q6")
+buy_price = 60
+sell_price = 30
+id = "Vitamin"
+display_name = "Vitamin C"
+description = "维他命"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://btl2nggv7ofj3"]
+
+[ext_resource type="Script" uid="uid://bs7rem3cb2r7q" path="res://scripts/data/item_data.gd" id="1_5fhmd"]
+
+[resource]
+script = ExtResource("1_5fhmd")
+buy_price = 100
+sell_price = 50
+id = "AED"
+display_name = "AED"
+description = "Automated External Defibrillator"
