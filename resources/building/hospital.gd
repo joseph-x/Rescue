@@ -1,2 +1,0 @@
-extends BaseData
-class_name HospitalBuilding

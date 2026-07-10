@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://bi7y1g5brp88"]
+
+[ext_resource type="Script" uid="uid://dlmmb3t34275b" path="res://resources/building/building_data.gd" id="1_kyhww"]
+
+[resource]
+script = ExtResource("1_kyhww")
+id = "B002"
+display_name = "Niko Inc"
+description = "Niko Factory"

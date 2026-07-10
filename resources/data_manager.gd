@@ -2,12 +2,28 @@ extends Node
 class_name DataManager
 
 const BUILDING_PATH := "res://resources/building"
+const ITEM_PATH := "res://resources/item"
 
 var buildings: Dictionary = {}
+var items: Dictionary = {}
 
 func _ready() -> void:
-	buildings = _load_directory(BUILDING_PATH, HospitalBuilding)
+	buildings = _load_directory(BUILDING_PATH, BuildingData)
+	print(buildings.size())
 	
+	items = _load_directory(ITEM_PATH, ItemData)
+	print(items.size())
+
+
+#region Public Methods
+func get_building(id: String) -> BuildingData:
+	return buildings.get(id) as BuildingData
+
+
+func get_item(id: String) -> ItemData:
+	return items.get(id) as ItemData
+
+#endregion
 	
 
 func _load_directory(path: String, expected_type: Variant) -> Dictionary:
