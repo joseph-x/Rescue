@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d0evbt4sq33hd" path="res://assets/game_ui/game_scene/header_bg.png" id="6_j8flk"]
 [ext_resource type="FontFile" uid="uid://c2282cd7pujst" path="res://fonts/MiSans/MiSans-Heavy.ttf" id="9_j6s53"]
 [ext_resource type="FontFile" uid="uid://chfo04v68n46w" path="res://fonts/MiSans/MiSans-Medium.ttf" id="9_jytbd"]
-[ext_resource type="Script" uid="uid://dw4kmvven5xn1" path="res://scripts/game_manager.gd" id="10_dgii4"]
+[ext_resource type="Script" uid="uid://dw4kmvven5xn1" path="res://scripts/framework/game_manager.gd" id="10_dgii4"]
 [ext_resource type="Script" uid="uid://b2hfy47uc4fs7" path="res://scripts/framework/game_time_manager.gd" id="12_3di6p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iprv4"]

@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 EnumGlobal="*uid://dodd46v7matip"
 Constants="*uid://cp5n7xcxj3na3"
+EventBus="*uid://iwqsp76fctgt"
+SaveManager="*uid://6djvd3c3md56"
+InventoryManager="*uid://cj4v3tdgx241q"
+PlayerManager="*uid://chs6pvflampgg"
+ConfigManager="*uid://bjvgl47qls10b"
 
 [display]
 

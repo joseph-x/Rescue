@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="HospitalBuilding" format=3 uid="uid://dku1rbaj6uie0"]
+
+[ext_resource type="Script" uid="uid://c6xlt1pqc3b65" path="res://resources/building/hospital.gd" id="1_h31s4"]
+
+[resource]
+script = ExtResource("1_h31s4")
+id = "H001"
+display_name = "Ruijin Hospital"
+description = "Shanghai Ruijin Hospital"
