@@ -1,5 +1,8 @@
 extends Node
 
+# GameData
+signal data_loaded
+
 # 背包
 signal inventory_changed(item: Variant)
 signal inventory_added(item: Variant, count: int)

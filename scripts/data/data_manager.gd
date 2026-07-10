@@ -6,6 +6,7 @@ const ITEM_PATH := "res://resources/item"
 
 var buildings: Dictionary = {}
 var items: Dictionary = {}
+@export var is_loaded: bool = false
 
 func _ready() -> void:
 	buildings = _load_directory(BUILDING_PATH, BuildingData)
@@ -13,6 +14,9 @@ func _ready() -> void:
 	
 	items = _load_directory(ITEM_PATH, ItemData)
 	print(items.size())
+	
+	is_loaded = true
+	EventBus.data_loaded.emit()
 
 
 #region Public Methods
