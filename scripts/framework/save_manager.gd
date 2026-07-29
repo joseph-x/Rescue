@@ -41,6 +41,12 @@ func load() -> void:
 	EventBus.before_load.emit()
 	
 	var file := FileAccess.open(SAVE_PATH, FileAccess.READ)
+	
+	if file == null:
+		EventBus.load_failed.emit()
+		push_error("读取存档失败")
+		return
+	
 	var json_text := file.get_as_text()
 	file.close()
 	

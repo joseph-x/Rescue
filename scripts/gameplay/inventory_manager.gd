@@ -7,4 +7,4 @@ func to_save_data() -> Dictionary:
 
 func from_save_data(data: Dictionary) -> void:
 	items = data.duplicate(true)
-	EventBus.inventory_changed.emit()
+	EventBus.inventory_changed.emit(items)

@@ -71,4 +71,6 @@ func set_level(level: EnumGlobal.CRISIS_LEVEL) -> void:
 func _set_level_slice(texture_rect: TextureRect, texture_p: Vector2i) -> void:
 	var atlas_texture: AtlasTexture = texture_rect.texture
 	var region = Rect2(texture_p, Vector2i(40, 12))
-	atlas_texture.region = region
+
+	if atlas_texture != null:
+		atlas_texture.region = region

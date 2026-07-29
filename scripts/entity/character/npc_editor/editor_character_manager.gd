@@ -67,6 +67,11 @@ func _load_from_json() -> void:
 		print("文件不存在: ", DATA_PATH)
 	
 	var file = FileAccess.open(DATA_PATH, FileAccess.READ)
+
+	if file == null:
+		push_error("存档读取失败")
+		return
+
 	var content = file.get_as_text()
 	file.close()
 	

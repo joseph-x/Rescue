@@ -38,6 +38,10 @@ func load() -> void:
 		print("文件不存在: ", NAME_BASE_PATH)
 	
 	var file = FileAccess.open(NAME_BASE_PATH, FileAccess.READ)
+	if file == null:
+		push_error("姓名库读取失败")
+		return
+
 	var content = file.get_as_text()
 	file.close()
 	
