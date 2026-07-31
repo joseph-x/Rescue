@@ -3,13 +3,16 @@ extends Node2D
 @onready var menu_layer: CanvasLayer = $MenuLayer
 @onready var crisis_bar: CrisisBar = $HUDLayer/ActionPanel/CrisisBar
 @onready var time_bar: TimeBar = $HUDLayer/ActionPanel/TimeBar
-@onready var game_time_manager: GameTimeManager = $GameManager/GameTimeManager
+
+@onready var game_manager: GameManager = $GameManager
+var game_time_manager: GameTimeManager
 
 
 func _ready() -> void:
 	menu_layer.hide()
 	crisis_bar.set_level(EnumGlobal.CRISIS_LEVEL.MEDIUM)
 
+	game_time_manager = game_manager.game_time_manager
 	game_time_manager.minute_changed.connect(_on_minute_changed)
 	game_time_manager.hour_changed.connect(_on_hour_changed)
 
