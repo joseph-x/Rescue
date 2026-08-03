@@ -18,7 +18,7 @@ func save() -> void:
 		NAME_CONFIG: ConfigManager.to_save_data()
 	}
 	
-	print(save_data)
+	print("save_manager: %s" % save_data)
 	
 	# 写文件
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)

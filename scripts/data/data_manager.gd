@@ -10,10 +10,10 @@ var items: Dictionary = {}
 
 func _ready() -> void:
 	buildings = _load_directory(BUILDING_PATH, BuildingData)
-	print(buildings.size())
+	print("data_manager: buildings %s" % buildings.size())
 	
 	items = _load_directory(ITEM_PATH, ItemData)
-	print(items.size())
+	print("data_manager: items %s" % items.size())
 	
 	is_loaded = true
 	EventBus.data_loaded.emit()
