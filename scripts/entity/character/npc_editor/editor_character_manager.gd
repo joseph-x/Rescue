@@ -19,14 +19,18 @@ func new_character(character_type: EnumGlobal.CHARACTER_TYPE) -> void:
 		EnumGlobal.CHARACTER_TYPE.PATIENT:
 			var p: Patient = Patient.new()
 			var gender: int = randi_range(0, 1)
+			p.create_uid()
 			p.name = name_manager.get_random_name(gender)
 			patients.append(p)
+			print("创建患者: ", p.name, " uid: ", p.uid)
 			
 		EnumGlobal.CHARACTER_TYPE.STAFF:
 			var s: Staff = Staff.new()
 			var gender: int = randi_range(0, 1)
+			s.create_uid()
 			s.name = name_manager.get_random_name(gender)
 			staff.append(s)
+			print("创建员工: ", s.name, " uid: ", s.uid)
 	
 func save() -> void:	
 	var p_dict_array: Array = []
@@ -83,7 +87,10 @@ func _load_from_json() -> void:
 
 
 func _process_json(root: Dictionary) -> void:
-	patients = root[NAME_PATIENT]
-	print(patients)
+	if root.has(NAME_PATIENT):
+		patients = root[NAME_PATIENT]
+	if root.has(NAME_STAFF):
+		staff = root[NAME_STAFF]
+	print("load patients: ", patients.size(), "staff: ", staff.size())
 
 #endregion
