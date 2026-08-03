@@ -65,6 +65,10 @@ func save() -> void:
 	pass
 
 func get_random_name(gender: int) -> String:
+	if name_family == null or name_family.is_empty():
+		push_warning("NameManager: 姓氏库未加载")
+		return "Unknown"
+	
 	var name: String
 	
 	var family_name_index: int = randi_range(0, name_family.size() - 1)
@@ -73,28 +77,34 @@ func get_random_name(gender: int) -> String:
 	# var gender: int = randi_range(0,1)		# 0-female；1-male
 	var last_name_length: int = randi_range(0,1)	# 0-2bit; 1-3bit
 	
-	var last_name1: String
-	var last_name2: String
+	var last_name1: String = ""
+	var last_name2: String = ""
 	
 	match gender:
 		0:
 			if last_name_length == 0:
-				var last_name_index: int = randi_range(0, name_female_d.size() - 1)
-				last_name1 = name_female_d[last_name_index]
+				if name_female_d != null and not name_female_d.is_empty():
+					var last_name_index: int = randi_range(0, name_female_d.size() - 1)
+					last_name1 = name_female_d[last_name_index]
 			else:
-				var last_name_index1: int = randi_range(0, name_female_e1.size() - 1)
-				var last_name_index2: int = randi_range(0, name_female_e2.size() - 1)
-				last_name1 = name_female_e1[last_name_index1]
-				last_name2 = name_female_e2[last_name_index2]
+				if name_female_e1 != null and not name_female_e1.is_empty():
+					var last_name_index1: int = randi_range(0, name_female_e1.size() - 1)
+					last_name1 = name_female_e1[last_name_index1]
+				if name_female_e2 != null and not name_female_e2.is_empty():
+					var last_name_index2: int = randi_range(0, name_female_e2.size() - 1)
+					last_name2 = name_female_e2[last_name_index2]
 		1:
 			if last_name_length == 0:
-				var last_name_index: int = randi_range(0, name_male_d.size() - 1)
-				last_name1 = name_male_d[last_name_index]
+				if name_male_d != null and not name_male_d.is_empty():
+					var last_name_index: int = randi_range(0, name_male_d.size() - 1)
+					last_name1 = name_male_d[last_name_index]
 			else:
-				var last_name_index1: int = randi_range(0, name_male_e1.size() - 1)
-				var last_name_index2: int = randi_range(0, name_male_e2.size() - 1)
-				last_name1 = name_male_e1[last_name_index1]
-				last_name2 = name_male_e2[last_name_index2]
+				if name_male_e1 != null and not name_male_e1.is_empty():
+					var last_name_index1: int = randi_range(0, name_male_e1.size() - 1)
+					last_name1 = name_male_e1[last_name_index1]
+				if name_male_e2 != null and not name_male_e2.is_empty():
+					var last_name_index2: int = randi_range(0, name_male_e2.size() - 1)
+					last_name2 = name_male_e2[last_name_index2]
 	
 	name = family_name + last_name1 + last_name2
 	return name
