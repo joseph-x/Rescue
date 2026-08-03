@@ -69,8 +69,11 @@ func set_level(level: EnumGlobal.CRISIS_LEVEL) -> void:
 			bar_label.text = "CRITICAL"
 
 func _set_level_slice(texture_rect: TextureRect, texture_p: Vector2i) -> void:
+	if texture_rect == null:
+		return
+	if not is_instance_of(texture_rect.texture, AtlasTexture):
+		push_warning("CrisisBar: texture_rect 的 texture 不是 AtlasTexture 类型")
+		return
 	var atlas_texture: AtlasTexture = texture_rect.texture
 	var region = Rect2(texture_p, Vector2i(40, 12))
-
-	if atlas_texture != null:
-		atlas_texture.region = region
+	atlas_texture.region = region
