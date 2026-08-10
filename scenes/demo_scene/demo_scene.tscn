@@ -1,6 +1,22 @@
 [gd_scene format=3 uid="uid://c0hywahfbk6c2"]
 
 [ext_resource type="Script" uid="uid://dboo0qjsutbmp" path="res://scenes/demo_scene/demo_scene.gd" id="1_nflch"]
+[ext_resource type="Script" uid="uid://dw4kmvven5xn1" path="res://scripts/framework/game_manager.gd" id="2_cfdsw"]
 
 [node name="DemoScene" type="Node2D" unique_id=499993352]
 script = ExtResource("1_nflch")
+
+[node name="GameManager" type="Node" parent="." unique_id=1907850420]
+script = ExtResource("2_cfdsw")
+
+[node name="TestContainer" type="HBoxContainer" parent="." unique_id=1706723283]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="LeftContainer" type="VBoxContainer" parent="TestContainer" unique_id=1061366881]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="TestContainer/LeftContainer" unique_id=883455149]
+layout_mode = 2
+text = "TimeShower"
