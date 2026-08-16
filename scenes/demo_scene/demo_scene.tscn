@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dboo0qjsutbmp" path="res://scenes/demo_scene/demo_scene.gd" id="1_nflch"]
 [ext_resource type="Script" uid="uid://dw4kmvven5xn1" path="res://scripts/framework/game_manager.gd" id="2_cfdsw"]
+[ext_resource type="PackedScene" uid="uid://bfuuvyfft2qvh" path="res://scenes/mailbox_scene/mail_scene.tscn" id="3_cfdsw"]
 
 [node name="DemoScene" type="Node2D" unique_id=499993352]
 script = ExtResource("1_nflch")
@@ -20,3 +21,14 @@ layout_mode = 2
 [node name="TimeLabel" type="Label" parent="TestContainer/LeftContainer" unique_id=883455149]
 layout_mode = 2
 text = "TimeShower"
+
+[node name="MailScene" parent="." unique_id=458612141 instance=ExtResource("3_cfdsw")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 1224.0
+offset_bottom = 968.0
+grow_horizontal = 1
+grow_vertical = 1

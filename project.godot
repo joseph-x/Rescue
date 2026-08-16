@@ -24,6 +24,7 @@ ConfigManager="*uid://bjvgl47qls10b"
 SaveManager="*uid://6djvd3c3md56"
 InventoryManager="*uid://cj4v3tdgx241q"
 PlayerManager="*uid://chs6pvflampgg"
+MailManager="*uid://m0j7frv0ljjd"
 
 [display]
 

@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var demo_scene_button = $ActionUILayer/SideNav/ItemGroup/DemoButton
 @onready var npc_editor_scene_button = $ActionUILayer/SideNav/ItemGroup/NPCEditorButton
+
+@onready var mailbox_scene_button = $ActionUILayer/SideNav/ItemGroup/MailBoxButton
 @onready var system_settings_button = $ActionUILayer/SideNav/ItemGroup/MainMenuItem7
 @onready var exit_game_button = $ActionUILayer/SideNav/ItemGroup/MainMenuItem8
 
@@ -10,6 +12,8 @@ extends Node2D
 func _ready() -> void:
 	demo_scene_button.button_up.connect(_on_demo_scene_button)
 	npc_editor_scene_button.button_up.connect(_on_npc_editor_scene_button)
+	
+	mailbox_scene_button.button_up.connect(_on_mailbox_scene_button)
 	
 	play_button.button_up.connect(_on_play_game)
 	
@@ -25,6 +29,10 @@ func _on_demo_scene_button() -> void:
 func _on_npc_editor_scene_button() -> void:
 	get_tree().change_scene_to_file(Constants.SCENE_PATHS["NPCEditor"])
 	
+
+func _on_mailbox_scene_button() -> void:
+	get_tree().change_scene_to_file(Constants.SCENE_PATHS["Mailbox"])
+
 
 func _on_play_game() -> void:
 	#TODO: new game inital

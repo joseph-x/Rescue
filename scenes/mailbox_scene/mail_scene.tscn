@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bfuuvyfft2qvh"]
+
+[ext_resource type="Script" uid="uid://cchi7qs7okffm" path="res://scenes/mailbox_scene/mail_scene.gd" id="1_1twad"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1twad"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1twad"]
+
+[node name="MailScene" type="Control" unique_id=458612141]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1twad")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2052286688]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MailList" type="ItemList" parent="HBoxContainer" unique_id=1105446526]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="Badge" type="Label" parent="HBoxContainer/MailList" unique_id=655551827]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 39.0
+offset_bottom = 23.0
+text = "Bage"
+
+[node name="DetailPanel" type="PanelContainer" parent="HBoxContainer" unique_id=1387825194]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1twad")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/DetailPanel" unique_id=824892182]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer/DetailPanel/VBoxContainer" unique_id=294791469]
+layout_mode = 2
+text = "Title Label"
+label_settings = SubResource("LabelSettings_1twad")
+
+[node name="SenderLabel" type="Label" parent="HBoxContainer/DetailPanel/VBoxContainer" unique_id=630590981]
+layout_mode = 2
+text = "Sender Label"
+label_settings = SubResource("LabelSettings_1twad")
+
+[node name="BodyLabel" type="Label" parent="HBoxContainer/DetailPanel/VBoxContainer" unique_id=1568837470]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+text = "Sender Label"
+label_settings = SubResource("LabelSettings_1twad")
+
+[node name="ClaimButton" type="Button" parent="HBoxContainer/DetailPanel/VBoxContainer" unique_id=1750605250]
+custom_minimum_size = Vector2(240, 44)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Claim"

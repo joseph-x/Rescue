@@ -189,6 +189,10 @@ item_type = 6
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="MailBoxButton" type="Button" parent="ActionUILayer/SideNav/ItemGroup" unique_id=1258410120]
+layout_mode = 2
+text = "MailBox"
+
 [node name="DemoButton" type="Button" parent="ActionUILayer/SideNav/ItemGroup" unique_id=110915252]
 layout_mode = 2
 text = "Demo Scene"

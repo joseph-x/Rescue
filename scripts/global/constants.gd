@@ -8,6 +8,7 @@ const SCENE_PATHS: Dictionary = {
 	"Settings": "res://scenes/settings_scene/settings_scene.tscn",
 	"Demo": "res://scenes/demo_scene/demo_scene.tscn",
 	"NPCEditor": "res://scenes/npc_editor_scene/npc_editor_scene.tscn",
+	"Mailbox": "res://scenes/mailbox_scene/mail_scene.tscn",
 }
 
 const DEBUG_MODE: bool = true
