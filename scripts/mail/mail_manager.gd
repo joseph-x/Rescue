@@ -4,6 +4,7 @@ extends Node
 signal mail_list_changed                        # 列表变化：红点 / 列表刷新
 signal mail_added(mail: MailData)               # 新邮件到达：弹通知
 signal attachment_claimed(mail_id: String)      # 附件已领取
+signal mail_replied(original_id: String, reply_mail_id: String)
 
 const SAVE_PATH := "user://mails.save"
 
@@ -13,6 +14,7 @@ var _mails: Array[MailData] = []
 ## 签名：func(item_id: String, amount: int) -> bool，返回是否发放成功。
 var item_grant_callback: Callable = Callable()
 
+var reply_hook: Callable = Callable()
 
 # ---------- 生命周期 ----------
 func _ready() -> void:
@@ -64,6 +66,14 @@ func get_mail(mail_id: String) -> MailData:
 	return _find(mail_id)
 
 
+func get_received() -> Array[MailData]:
+	return _mails.filter(func(m: MailData) -> bool: return m.direction == 0)
+
+
+func get_sent() -> Array[MailData]:
+	return _mails.filter(func(m: MailData) -> bool: return m.direction == 1)
+
+
 func get_unread_count() -> int:
 	var count := 0
 	for mail: MailData in _mails:
@@ -103,6 +113,35 @@ func send_mail(
 	mail_list_changed.emit()
 	mail_added.emit(mail)
 	return mail
+
+
+## 回复一封收到的邮件：生成"玩家发送"的邮件进已发送箱
+func reply_mail(original_id: String, reply_body: String, player_name: String = "玩家") -> String:
+	var original := _find(original_id)
+	if original == null:
+		push_warning("MailManager: 回复目标邮件不存在 %s" % original_id)
+		return ""
+
+	var mail := MailData.new()
+	mail.mail_id = "mail_%d_%d" % [Time.get_unix_time_from_system(), _mails.size()]
+	mail.sender = player_name
+	mail.title = "Re: %s" % original.title
+	mail.body = reply_body
+	mail.send_time = Time.get_unix_time_from_system()
+	mail.direction = 1
+	mail.reply_to = original_id
+
+	original.replied = true
+
+	_mails.append(mail)
+	save_mails()
+	mail_list_changed.emit()
+	mail_added.emit(mail)
+
+	if reply_hook.is_valid():
+		reply_hook.call(original)
+	mail_replied.emit(original_id, mail.mail_id)
+	return mail.mail_id
 
 
 # ---------- 状态操作 ----------
@@ -152,6 +191,9 @@ func _to_dict(mail: MailData) -> Dictionary:
 		"expire_time": mail.expire_time,
 		"is_read": mail.is_read,
 		"claimed": mail.claimed,
+		"direction": mail.direction,
+		"reply_to": mail.reply_to,
+		"replied": mail.replied,
 		"attachments": attachments,
 	}
 
@@ -166,7 +208,10 @@ func _from_dict(dict: Dictionary) -> MailData:
 	mail.expire_time = int(dict.get("expire_time", 0))
 	mail.is_read = bool(dict.get("is_read", false))
 	mail.claimed = bool(dict.get("claimed", false))
-
+	mail.direction = int(dict.get("direction", 0))
+	mail.reply_to = str(dict.get("reply_to", ""))
+	mail.replied = bool(dict.get("replied", false))
+	
 	for att_dict in dict.get("attachments", []):
 		var att := MailAttachment.new()
 		att.type = str(att_dict.get("type", ""))

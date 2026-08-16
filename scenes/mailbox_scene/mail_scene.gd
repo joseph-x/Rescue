@@ -4,13 +4,16 @@ extends Control
 @onready var title_label: Label = $HBoxContainer/DetailPanel/VBoxContainer/TitleLabel
 @onready var sender_label: Label = $HBoxContainer/DetailPanel/VBoxContainer/SenderLabel
 @onready var body_label: Label = $HBoxContainer/DetailPanel/VBoxContainer/BodyLabel
+
 @onready var claim_button: Button = $HBoxContainer/DetailPanel/VBoxContainer/ClaimButton
+@onready var reply_button: Button = $HBoxContainer/DetailPanel/VBoxContainer/ReplyButton
+
 @onready var detail_panel: PanelContainer = $HBoxContainer/DetailPanel
 @onready var badge: Label = $HBoxContainer/MailList/Badge
 
 
 var _selected_id: String = ""
-
+var _reply_target_id: String = ""
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,7 +26,7 @@ func _ready() -> void:
 	mail_list.item_activated.connect(_on_item_selected)
 	
 	claim_button.pressed.connect(_on_claim_pressed)
-	
+	reply_button.pressed.connect(_on_reply_pressed)
 	
 	_refresh_list()
 	_update_badge()
@@ -68,6 +71,16 @@ func _on_item_selected(index: int) -> void:
 func _on_claim_pressed() -> void:
 	if _selected_id != "":
 		MailManager.claim_attachment(_selected_id)
+
+
+func _on_reply_pressed() -> void:
+	_reply_target_id = _selected_id
+	
+	if _reply_target_id == "":
+		return
+	var new_id := MailManager.reply_mail(_reply_target_id, "reply_input_text")
+	if new_id != "":
+		print("reply sucuessful")
 
 
 func _show_detail(mail_id: String) -> void:

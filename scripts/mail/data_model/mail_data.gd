@@ -9,4 +9,7 @@ class_name MailData
 @export var expire_time: int = 0        # 过期时间戳，0 = 永不过期
 @export var is_read: bool = false       # 是否已读
 @export var claimed: bool = false       # 附件是否已领取（幂等防重复）
+@export var direction: int = 0        	# 0=收到  1=已发送
+@export var reply_to: String = ""     	# 引用原信 ID
+@export var replied: bool = false     	# 原信是否已被回复
 @export var attachments: Array[MailAttachment] = []

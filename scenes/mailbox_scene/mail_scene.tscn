@@ -65,7 +65,13 @@ text = "Sender Label"
 label_settings = SubResource("LabelSettings_1twad")
 
 [node name="ClaimButton" type="Button" parent="HBoxContainer/DetailPanel/VBoxContainer" unique_id=1750605250]
-custom_minimum_size = Vector2(240, 44)
+custom_minimum_size = Vector2(160, 44)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Claim"
+
+[node name="ReplyButton" type="Button" parent="HBoxContainer/DetailPanel/VBoxContainer" unique_id=1466053743]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Reply"
