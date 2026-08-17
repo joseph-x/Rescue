@@ -9,6 +9,7 @@ script = ExtResource("1_nflch")
 
 [node name="GameManager" type="Node" parent="." unique_id=1907850420]
 script = ExtResource("2_cfdsw")
+game_timeout = Vector3i(0, 2, 30)
 
 [node name="TestContainer" type="HBoxContainer" parent="." unique_id=1706723283]
 offset_right = 1920.0
