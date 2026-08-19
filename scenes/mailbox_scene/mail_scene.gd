@@ -7,6 +7,7 @@ extends Control
 
 @onready var claim_button: Button = $HBoxContainer/DetailPanel/VBoxContainer/ClaimButton
 @onready var reply_button: Button = $HBoxContainer/DetailPanel/VBoxContainer/ReplyButton
+@onready var delete_button: Button = $HBoxContainer/DetailPanel/VBoxContainer/DeleteButton
 
 @onready var detail_panel: PanelContainer = $HBoxContainer/DetailPanel
 @onready var badge: Label = $HBoxContainer/MailList/Badge
@@ -27,6 +28,7 @@ func _ready() -> void:
 	
 	claim_button.pressed.connect(_on_claim_pressed)
 	reply_button.pressed.connect(_on_reply_pressed)
+	delete_button.pressed.connect(_on_delete_pressed)
 	
 	_refresh_list()
 	_update_badge()
@@ -66,6 +68,10 @@ func _on_item_selected(index: int) -> void:
 	MailManager.mark_read(mail_id)
 	_show_detail(mail_id)
 
+
+func _on_delete_pressed() -> void:
+	if _selected_id != "":
+		MailManager.delete_mail(_selected_id)
 
 
 func _on_claim_pressed() -> void:

@@ -75,3 +75,9 @@ custom_minimum_size = Vector2(160, 44)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Reply"
+
+[node name="DeleteButton" type="Button" parent="HBoxContainer/DetailPanel/VBoxContainer" unique_id=1402761614]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Delete"

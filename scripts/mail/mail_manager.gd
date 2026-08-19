@@ -89,6 +89,13 @@ func has_claimable_attachment() -> bool:
 	return false
 
 
+func delete_mail(mail_id: String) -> void:
+	var mail := _find(mail_id)
+	if mail != null:
+		_mails.remove_at(0)
+
+
+
 # ---------- 发信 ----------
 func send_mail(
 	sender: String,
