@@ -89,11 +89,15 @@ func has_claimable_attachment() -> bool:
 	return false
 
 
-func delete_mail(mail_id: String) -> void:
-	var mail := _find(mail_id)
-	if mail != null:
-		_mails.remove_at(0)
-
+func delete_mail(mail_id: String) -> bool:
+	var index := _find_index(mail_id)
+	if index == -1:
+		return false
+	_mails.remove_at(index)
+	save_mails()
+	mail_list_changed.emit()
+	return true
+	
 
 
 # ---------- 发信 ----------
@@ -236,6 +240,11 @@ func _find(mail_id: String) -> MailData:
 			return mail
 	return null
 
+func _find_index(mail_id: String) -> int:
+	for i in _mails.size():
+		if _mails[i].mail_id == mail_id:
+			return i
+	return -1
 
 func _clean_expired() -> void:
 	var now := Time.get_unix_time_from_system()
