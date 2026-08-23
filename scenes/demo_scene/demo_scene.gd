@@ -15,7 +15,7 @@ func _test_mail() -> void:
 	att.type = "item"
 	att.item_id = "gold_coin"
 	att.amount = 100
-	MailManager.send_mail("系统", "新手奖励", "欢迎来到游戏！附送 100 金币。", [att])
+	MailManager.send_mail("系统", "新手奖励", "欢迎来到游戏！附送 200 金币。", [att])
 
 
 func _on_minute_changed(hour: int, minute: int) -> void:

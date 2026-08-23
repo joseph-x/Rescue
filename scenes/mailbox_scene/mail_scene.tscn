@@ -61,7 +61,7 @@ label_settings = SubResource("LabelSettings_1twad")
 [node name="BodyLabel" type="Label" parent="HBoxContainer/DetailPanel/VBoxContainer" unique_id=1568837470]
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
-text = "Sender Label"
+text = "Body Label"
 label_settings = SubResource("LabelSettings_1twad")
 
 [node name="ClaimButton" type="Button" parent="HBoxContainer/DetailPanel/VBoxContainer" unique_id=1750605250]
