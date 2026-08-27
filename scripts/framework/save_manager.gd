@@ -15,7 +15,6 @@ func save() -> void:
 	save_data = {
 		NAME_INVENTORY: InventoryManager.to_save_data(),
 		NAME_PLAYER_INFO: PlayerManager.to_save_data(),
-		NAME_CONFIG: ConfigManager.to_save_data()
 	}
 	
 	print("save_manager: %s" % save_data)
@@ -58,7 +57,6 @@ func load() -> void:
 	
 	InventoryManager.from_save_data(result.get(NAME_INVENTORY, {}))
 	PlayerManager.from_save_data(result.get(NAME_PLAYER_INFO, {}))
-	ConfigManager.from_save_data(result.get(NAME_CONFIG, {}))
 	
 	EventBus.game_loaded.emit()
 

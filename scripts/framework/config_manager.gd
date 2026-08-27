@@ -1,23 +1,71 @@
 extends Node
+class_name ConfigManager
 
-# 初始金币、Tick速度、季节长度
-var game_config
+const settings_path: String = "user://settings.cfg"
 
-# UI动画、Tips
-var ui_config
+@export var config: Dictionary = {}
 
-# 音量
-var audio_config
+var default_config: Dictionary = {}
+var audio_cfg: Dictionary = {}
+var graphic_cfg: Dictionary = {}
+var controls_cfg: Dictionary = {}
+var gameplay_cfg: Dictionary = {}
 
-# 快捷键
-var input_config
-var debug_config
 
-var config_data: Dictionary = {}
-
-func to_save_data() -> Dictionary:
-	return config_data
+func init_default_config() -> void:
+	audio_cfg = {
+		"muted": false,
+		"master_volume": 0.8,
+		"music_volume": 0.8,
+	}
+	graphic_cfg = {
+		"resolution": Vector2i(1920, 1080),
+		"fullscreen": true,
+	}
+	controls_cfg = {}
+	gameplay_cfg = {}
 	
-func from_save_data(data: Dictionary) -> void:
-	var new_data = data.duplicate(true)
-	config_data = new_data
+	default_config = {
+		"audio": audio_cfg,
+		"graphic": graphic_cfg,
+		"controls": controls_cfg,
+		"gameplay": gameplay_cfg
+	}
+
+func reset_to_default() -> void:
+	config = default_config.duplicate(true)
+
+
+func save() -> void:
+	var cfg := ConfigFile.new()
+	
+	var keys = config.keys()
+	for t1_key in keys:
+		var dict: Dictionary = config[t1_key] as Dictionary
+		for t2_key in dict.keys():
+			cfg.set_value(t1_key, t2_key, dict[t2_key])
+	
+	cfg.save(settings_path)
+	print("config saved")
+
+
+func load() -> void:
+	# 读取（启动时）
+	var cfg := ConfigFile.new()
+	var data: Dictionary = {}
+	
+	if cfg.load(settings_path) == OK:
+		var sections := cfg.get_sections()
+		for s in sections:
+			data[s] = {}
+			for k in cfg.get_section_keys(s):
+				data[s][k] = cfg.get_value(s,k,default_config[s][k])
+		
+		config = data
+		
+		print("loaded: ")
+		print(data)
+
+
+func _print_all() -> void:
+	print(config)
