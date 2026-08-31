@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cx0w3g5akc6bn"]
+
+[ext_resource type="Script" uid="uid://c5atc20nvbbnv" path="res://scenes/scenario_selector_scene/components/scenario_item.gd" id="1_6idem"]
+[ext_resource type="Texture2D" uid="uid://d0ckqjrppanj8" path="res://assets2/gui/scenario_selector/default_thumbnail.png" id="1_pnqib"]
+[ext_resource type="Texture2D" uid="uid://bdjhqth6nttti" path="res://assets2/gui/scenario_selector/mask_thumbnail.png" id="2_6idem"]
+[ext_resource type="FontFile" uid="uid://chfo04v68n46w" path="res://fonts/MiSans/MiSans-Medium.ttf" id="3_nymmd"]
+[ext_resource type="Texture2D" uid="uid://dm4pg3vfx4fev" path="res://assets2/gui/scenario_selector/location_icon.png" id="4_2p2rq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1011"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.9098039, 0, 0.101960786, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vumos"]
+font = ExtResource("3_nymmd")
+font_size = 24
+
+[node name="Button" type="Button" unique_id=1380812210]
+custom_minimum_size = Vector2(492, 352)
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath("../Button2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g1011")
+toggle_mode = true
+script = ExtResource("1_6idem")
+
+[node name="Thumbnail" type="TextureRect" parent="." unique_id=2095377656]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -170.0
+offset_right = 240.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pnqib")
+
+[node name="ThumbnailMask" type="TextureRect" parent="." unique_id=1730766926]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -170.0
+offset_right = 240.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6idem")
+
+[node name="LocationLabel" type="Label" parent="." unique_id=1038180581]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 289.0
+offset_right = 157.0
+offset_bottom = 322.0
+text = "Location"
+label_settings = SubResource("LabelSettings_vumos")
+
+[node name="icon" type="TextureRect" parent="." unique_id=1478501904]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 294.0
+offset_right = 54.0
+offset_bottom = 318.0
+texture = ExtResource("4_2p2rq")
+expand_mode = 1

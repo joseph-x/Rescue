@@ -9,6 +9,9 @@ const SCENE_PATHS: Dictionary = {
 	"Demo": "res://scenes/demo_scene/demo_scene.tscn",
 	"NPCEditor": "res://scenes/npc_editor_scene/npc_editor_scene.tscn",
 	"Mailbox": "res://scenes/mailbox_scene/mail_scene.tscn",
+	"ScenarioSelector": "res://scenes/scenario_selector_scene/scenario_selector_scene.tscn",
+	"ScenarioGameplay": "res://scenes/scenario_gameplay_scene/scenario_gameplay_scene.tscn",
+	"ScenarioLoading": "res://scenes/scenario_loading_scene/scenario_loading_scene.tscn",
 }
 
 const DEBUG_MODE: bool = true

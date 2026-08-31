@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://mvf1lew2dn1c"]
+
+[ext_resource type="Script" uid="uid://qm3p5wgbjpyc" path="res://scenes/scenario_selector_scene/scenario_selector_scene.gd" id="1_7v2xp"]
+[ext_resource type="Resource" uid="uid://bbcut31w86k2c" path="res://resources/scenarios/s1_res.tres" id="2_g00hv"]
+[ext_resource type="Resource" uid="uid://tne525k8s4c1" path="res://resources/scenarios/S2_res.tres" id="3_8i2kj"]
+[ext_resource type="Resource" uid="uid://bsbv7lbtnpjj8" path="res://resources/scenarios/S3_res.tres" id="4_o4x1h"]
+[ext_resource type="Resource" uid="uid://cbtkigxern7t3" path="res://resources/scenarios/S4_res.tres" id="5_l503c"]
+[ext_resource type="Texture2D" uid="uid://repuqo7kpb4x" path="res://assets2/gui/common/common_bg.png" id="6_l503c"]
+
+[node name="ScenarioScene" type="Node2D" unique_id=763736946]
+script = ExtResource("1_7v2xp")
+scenario_data_list = [ExtResource("2_g00hv"), ExtResource("3_8i2kj"), ExtResource("4_o4x1h"), ExtResource("5_l503c")]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=806967358]
+position = Vector2(960, 540)
+texture = ExtResource("6_l503c")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1897305229]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = 364.0
+offset_right = 1920.0
+offset_bottom = 716.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=1448671447]
+layout_mode = 2
+theme_override_constants/separation = 24

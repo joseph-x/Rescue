@@ -36,7 +36,7 @@ func _on_mailbox_scene_button() -> void:
 
 func _on_play_game() -> void:
 	#TODO: new game inital
-	get_tree().change_scene_to_file(Constants.SCENE_PATHS["GamePlay"])
+	get_tree().change_scene_to_file(Constants.SCENE_PATHS["ScenarioSelector"])
 
 func _on_exit_game(_item: MainMenuItem) -> void:
 	get_tree().quit()

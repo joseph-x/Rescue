@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://tne525k8s4c1"]
+
+[ext_resource type="Script" uid="uid://brijlmmyl0nsm" path="res://scripts/data/scenario_data.gd" id="1_e48g1"]
+
+[resource]
+script = ExtResource("1_e48g1")
+id = "S2"
+display_name = "S2_NAME"
+description = "S2_DESC"

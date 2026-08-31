@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://cbtkigxern7t3"]
+
+[ext_resource type="Script" uid="uid://brijlmmyl0nsm" path="res://scripts/data/scenario_data.gd" id="1_p67bw"]
+
+[resource]
+script = ExtResource("1_p67bw")
+id = "S4"
+display_name = "S4_NAME"
+description = "S4_DESC"
+difficulty = 3

@@ -62,9 +62,6 @@ func load() -> void:
 				data[s][k] = cfg.get_value(s,k,default_config[s][k])
 		
 		config = data
-		
-		print("loaded: ")
-		print(data)
 
 
 func _print_all() -> void:
