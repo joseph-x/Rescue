@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Rescue"
+config/name="Emergency Medical Service"
 config/tags=PackedStringArray("yoda")
 run/main_scene="uid://c8u8y0ve3ck10"
 config/features=PackedStringArray("4.6", "Forward Plus")
@@ -25,6 +25,7 @@ SaveManager="*uid://6djvd3c3md56"
 InventoryManager="*uid://cj4v3tdgx241q"
 PlayerManager="*uid://chs6pvflampgg"
 MailManager="*uid://m0j7frv0ljjd"
+SceneData="*uid://bum5hgnmnko1k"
 
 [display]
 

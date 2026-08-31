@@ -11,7 +11,7 @@ var buttons: Array[Button] = []
 var current_index := 0
 
 func _ready() -> void:
-	_test_scenairo_data()
+	# _test_scenairo_data()
 	_init_buttons(scenario_data_list)
 	
 	select_level(0)
@@ -74,5 +74,5 @@ func _on_button_mouse_entered(btn: ScenarioItem) -> void:
 	scroll.ensure_control_visible(btn)
 
 func _on_level_pressed(btn: ScenarioItem) -> void:
-	print("进入关卡：", btn.text)
-	# get_tree().change_scene_to_file("res://level_%d.tscn" % (current_index + 1))
+	SceneData.scenario_data = btn.scenario_data
+	get_tree().change_scene_to_file(Constants.SCENE_PATHS["ScenarioLoading"])

@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://dnx63korvi7nv"]
 
+[ext_resource type="Script" uid="uid://cufvxngs2co4" path="res://scenes/scenario_loading_scene/scenario_loading_scene.gd" id="1_cfe72"]
+
 [node name="ScenarioLoadingScene" type="Node2D" unique_id=616673071]
+script = ExtResource("1_cfe72")
+
+[node name="TestLabel" type="Label" parent="." unique_id=774803085]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "名人名言"
