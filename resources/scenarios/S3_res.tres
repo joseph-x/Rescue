@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://bsbv7lbtnpjj8"]
 
 [ext_resource type="Script" uid="uid://brijlmmyl0nsm" path="res://scripts/data/scenario_data.gd" id="1_wic4s"]
+[ext_resource type="Texture2D" uid="uid://d0ckqjrppanj8" path="res://assets2/gui/scenario_selector/default_thumbnail.png" id="2_vple0"]
 
 [resource]
 script = ExtResource("1_wic4s")
@@ -8,3 +9,4 @@ id = "S3"
 display_name = "S3_NAME"
 description = "S3_DESC"
 difficulty = 1
+thumbnail = ExtResource("2_vple0")

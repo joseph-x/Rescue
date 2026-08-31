@@ -1,9 +1,11 @@
-[gd_resource type="Resource" format=3 uid="uid://tne525k8s4c1"]
+[gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://tne525k8s4c1"]
 
 [ext_resource type="Script" uid="uid://brijlmmyl0nsm" path="res://scripts/data/scenario_data.gd" id="1_e48g1"]
+[ext_resource type="Texture2D" uid="uid://d0ckqjrppanj8" path="res://assets2/gui/scenario_selector/default_thumbnail.png" id="2_j20ky"]
 
 [resource]
 script = ExtResource("1_e48g1")
 id = "S2"
 display_name = "S2_NAME"
 description = "S2_DESC"
+thumbnail = ExtResource("2_j20ky")

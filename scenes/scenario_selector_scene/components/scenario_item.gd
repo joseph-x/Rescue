@@ -5,6 +5,7 @@ class_name ScenarioItem
 @export var current_state: ScenarioItemState = ScenarioItemState.NORMAL
 
 @onready var loacation_label: Label = $LocationLabel
+@onready var thumbnail_rect: TextureRect = $Thumbnail
 
 enum ScenarioItemState {
 	NORMAL,
@@ -19,6 +20,7 @@ func _ready() -> void:
 func set_with_data(d: ScenarioData) -> void:
 	scenario_data = d
 	loacation_label.text = tr(d.display_name)
+	thumbnail_rect.texture = d.thumbnail
 
 
 func set_selected_state() -> void:
@@ -26,4 +28,4 @@ func set_selected_state() -> void:
 
 
 func set_normal_state() -> void:
-	self.modulate.a = 0.5
+	self.modulate.a = 0.6
