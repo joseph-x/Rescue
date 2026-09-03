@@ -1,11 +1,59 @@
 [gd_scene format=3 uid="uid://dnx63korvi7nv"]
 
 [ext_resource type="Script" uid="uid://cufvxngs2co4" path="res://scenes/scenario_loading_scene/scenario_loading_scene.gd" id="1_cfe72"]
+[ext_resource type="Shader" uid="uid://dgjx4hubbfju7" path="res://materials/shaders/loading_texture_shader.gdshader" id="2_q6oxn"]
+[ext_resource type="FontFile" uid="uid://brpreek0wa5tq" path="res://fonts/MiSans/MiSans-Light.ttf" id="3_q6oxn"]
+[ext_resource type="Shader" uid="uid://cpch84ivttc1b" path="res://materials/shaders/loading_line_shader.gdshader" id="4_ldac0"]
+[ext_resource type="Texture2D" uid="uid://cn4nguaij5pss" path="res://assets2/gui/scenario_loading/loading_bar.png" id="5_1tnva"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ij28n"]
+shader = ExtResource("2_q6oxn")
+shader_parameter/progress = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ldac0"]
+font = ExtResource("3_q6oxn")
+font_size = 24
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1tnva"]
+shader = ExtResource("4_ldac0")
+shader_parameter/progress = 0.0
+shader_parameter/bar_color = Vector3(1, 0.12, 0.12)
+shader_parameter/bar_half = 0.06
 
 [node name="ScenarioLoadingScene" type="Node2D" unique_id=616673071]
 script = ExtResource("1_cfe72")
 
-[node name="TestLabel" type="Label" parent="." unique_id=774803085]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "名人名言"
+[node name="ScenarioLoading" type="Sprite2D" parent="." unique_id=844926443]
+material = SubResource("ShaderMaterial_ij28n")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=975708575]
+offset_top = 933.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_vertical = 0
+color = Color(0.039215688, 0.050980393, 0.07058824, 1)
+
+[node name="WordsLabel" type="Label" parent="ColorRect" unique_id=762638667]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "“有时是治愈，常常是帮助，总是去安慰” - 特鲁多"
+label_settings = SubResource("LabelSettings_ldac0")
+horizontal_alignment = 1
+
+[node name="ProgressBarRect" type="TextureRect" parent="ColorRect" unique_id=584082658]
+material = SubResource("ShaderMaterial_1tnva")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+texture = ExtResource("5_1tnva")
+expand_mode = 1

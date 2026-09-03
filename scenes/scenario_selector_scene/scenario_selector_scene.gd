@@ -13,7 +13,6 @@ var current_index := 0
 func _ready() -> void:
 	# _test_scenairo_data()
 	_init_buttons(scenario_data_list)
-	
 	select_level(0)
 
 func _test_scenairo_data() -> void:

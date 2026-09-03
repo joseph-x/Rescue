@@ -7,6 +7,7 @@ class_name ScenarioData
 @export var difficulty: int
 @export var achievements: Dictionary
 @export var thumbnail: Texture2D
+@export var loading_texture: Texture2D
 @export var stories: Array
 @export var diseases: Array
 

@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://bbcut31w86k2c"]
 
+[ext_resource type="Texture2D" uid="uid://sdh0v3pw38b7" path="res://resources/scenarios/S1_assets/S1_loading.png" id="1_0t7hb"]
 [ext_resource type="Script" uid="uid://brijlmmyl0nsm" path="res://scripts/data/scenario_data.gd" id="1_ukq0w"]
 [ext_resource type="Texture2D" uid="uid://d0ckqjrppanj8" path="res://assets2/gui/scenario_selector/default_thumbnail.png" id="2_tppqg"]
 
@@ -10,3 +11,4 @@ display_name = "S1_NAME"
 description = "S1_DESC"
 difficulty = 1
 thumbnail = ExtResource("2_tppqg")
+loading_texture = ExtResource("1_0t7hb")

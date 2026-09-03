@@ -3,6 +3,7 @@ class_name ScenarioItem
 
 @export var scenario_data: ScenarioData
 @export var current_state: ScenarioItemState = ScenarioItemState.NORMAL
+@export var is_locked: bool = true
 
 @onready var loacation_label: Label = $LocationLabel
 @onready var thumbnail_rect: TextureRect = $Thumbnail
