@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://cufvxngs2co4" path="res://scenes/scenario_loading_scene/scenario_loading_scene.gd" id="1_cfe72"]
 [ext_resource type="Shader" uid="uid://dgjx4hubbfju7" path="res://materials/shaders/loading_texture_shader.gdshader" id="2_q6oxn"]
 [ext_resource type="FontFile" uid="uid://brpreek0wa5tq" path="res://fonts/MiSans/MiSans-Light.ttf" id="3_q6oxn"]
+[ext_resource type="Texture2D" uid="uid://y2txf7jjty15" path="res://assets2/gui/common/game_logo.png" id="3_qqh32"]
 [ext_resource type="Shader" uid="uid://cpch84ivttc1b" path="res://materials/shaders/loading_line_shader.gdshader" id="4_ldac0"]
 [ext_resource type="Texture2D" uid="uid://cn4nguaij5pss" path="res://assets2/gui/scenario_loading/loading_bar.png" id="5_1tnva"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ij28n"]
 shader = ExtResource("2_q6oxn")
 shader_parameter/progress = 0.0
+shader_parameter/gray_fade = 0.5
 
 [sub_resource type="LabelSettings" id="LabelSettings_ldac0"]
 font = ExtResource("3_q6oxn")
@@ -25,6 +27,10 @@ script = ExtResource("1_cfe72")
 
 [node name="ScenarioLoading" type="Sprite2D" parent="." unique_id=844926443]
 material = SubResource("ShaderMaterial_ij28n")
+centered = false
+
+[node name="GameLogo" type="Sprite2D" parent="." unique_id=600276891]
+texture = ExtResource("3_qqh32")
 centered = false
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=975708575]

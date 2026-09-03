@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://dddmfifxrdi8l"]
 
+[ext_resource type="Script" uid="uid://dhbkq3nhck0hu" path="res://scenes/scenario_gameplay_scene/scenario_gameplay_scene.gd" id="1_ds6xc"]
+
 [node name="ScenarioGameplayScene" type="Node2D" unique_id=1061772817]
+script = ExtResource("1_ds6xc")
