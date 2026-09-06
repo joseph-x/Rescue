@@ -1,9 +1,9 @@
-extends Node2D
+extends Control
 
-@onready var loading_texture: Sprite2D = $ScenarioLoading
+@onready var loading_texture: TextureRect = $VBoxContainer/ScenarioLoading
 @onready var mat := loading_texture.material as ShaderMaterial
 
-@onready var bar := $ColorRect/ProgressBarRect
+@onready var bar := $VBoxContainer/ColorRect/ProgressBarRect
 @onready var bar_mat := bar.material as ShaderMaterial
 
 var scenario_data: ScenarioData

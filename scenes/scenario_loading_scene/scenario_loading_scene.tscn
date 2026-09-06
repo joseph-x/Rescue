@@ -2,45 +2,59 @@
 
 [ext_resource type="Script" uid="uid://cufvxngs2co4" path="res://scenes/scenario_loading_scene/scenario_loading_scene.gd" id="1_cfe72"]
 [ext_resource type="Shader" uid="uid://dgjx4hubbfju7" path="res://materials/shaders/loading_texture_shader.gdshader" id="2_q6oxn"]
+[ext_resource type="Texture2D" uid="uid://dnvw5yl5c2v01" path="res://assets2/gui/scenario_loading/default_loading.png" id="2_qqh32"]
 [ext_resource type="FontFile" uid="uid://brpreek0wa5tq" path="res://fonts/MiSans/MiSans-Light.ttf" id="3_q6oxn"]
 [ext_resource type="Texture2D" uid="uid://y2txf7jjty15" path="res://assets2/gui/common/game_logo.png" id="3_qqh32"]
 [ext_resource type="Shader" uid="uid://cpch84ivttc1b" path="res://materials/shaders/loading_line_shader.gdshader" id="4_ldac0"]
 [ext_resource type="Texture2D" uid="uid://cn4nguaij5pss" path="res://assets2/gui/scenario_loading/loading_bar.png" id="5_1tnva"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ij28n"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yxlms"]
 shader = ExtResource("2_q6oxn")
 shader_parameter/progress = 0.0
 shader_parameter/gray_fade = 0.5
 
-[sub_resource type="LabelSettings" id="LabelSettings_ldac0"]
+[sub_resource type="LabelSettings" id="LabelSettings_akn4c"]
 font = ExtResource("3_q6oxn")
 font_size = 24
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1tnva"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oxv7k"]
 shader = ExtResource("4_ldac0")
 shader_parameter/progress = 0.0
 shader_parameter/bar_color = Vector3(1, 0.12, 0.12)
 shader_parameter/bar_half = 0.06
 
-[node name="ScenarioLoadingScene" type="Node2D" unique_id=616673071]
+[node name="ScenarioLoadingTestScene" type="Control" unique_id=221261947]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_cfe72")
 
-[node name="ScenarioLoading" type="Sprite2D" parent="." unique_id=844926443]
-material = SubResource("ShaderMaterial_ij28n")
-centered = false
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=678194348]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
 
-[node name="GameLogo" type="Sprite2D" parent="." unique_id=600276891]
-texture = ExtResource("3_qqh32")
-centered = false
+[node name="ScenarioLoading" type="TextureRect" parent="VBoxContainer" unique_id=1536659029]
+material = SubResource("ShaderMaterial_yxlms")
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_qqh32")
+expand_mode = 2
+stretch_mode = 6
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=975708575]
-offset_top = 933.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-grow_vertical = 0
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer" unique_id=1228890567]
+custom_minimum_size = Vector2(0, 147)
+layout_mode = 2
 color = Color(0.039215688, 0.050980393, 0.07058824, 1)
 
-[node name="WordsLabel" type="Label" parent="ColorRect" unique_id=762638667]
+[node name="WordsLabel" type="Label" parent="VBoxContainer/ColorRect" unique_id=1609801155]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -51,11 +65,11 @@ offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "“有时是治愈，常常是帮助，总是去安慰” - 特鲁多"
-label_settings = SubResource("LabelSettings_ldac0")
+label_settings = SubResource("LabelSettings_akn4c")
 horizontal_alignment = 1
 
-[node name="ProgressBarRect" type="TextureRect" parent="ColorRect" unique_id=584082658]
-material = SubResource("ShaderMaterial_1tnva")
+[node name="ProgressBarRect" type="TextureRect" parent="VBoxContainer/ColorRect" unique_id=639754168]
+material = SubResource("ShaderMaterial_oxv7k")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -63,3 +77,27 @@ offset_bottom = 10.0
 grow_horizontal = 2
 texture = ExtResource("5_1tnva")
 expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/ColorRect" unique_id=2071452944]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/TextureButton" unique_id=1686411831]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Label"
+
+[node name="GameLogo" type="Sprite2D" parent="." unique_id=292129683]
+texture = ExtResource("3_qqh32")
+centered = false
