@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://d35mqg3hu8q7q"]
+
+[ext_resource type="Script" uid="uid://cufvxngs2co4" path="res://scenes/scenario_loading_scene/scenario_loading_scene.gd" id="1_1pu3a"]
+[ext_resource type="Shader" uid="uid://dgjx4hubbfju7" path="res://materials/shaders/loading_texture_shader.gdshader" id="2_nf2a5"]
+[ext_resource type="Texture2D" uid="uid://y2txf7jjty15" path="res://assets2/gui/common/game_logo.png" id="3_uxji6"]
+[ext_resource type="FontFile" uid="uid://brpreek0wa5tq" path="res://fonts/MiSans/MiSans-Light.ttf" id="4_odghk"]
+[ext_resource type="Shader" uid="uid://cpch84ivttc1b" path="res://materials/shaders/loading_line_shader.gdshader" id="5_4oxpw"]
+[ext_resource type="Texture2D" uid="uid://cn4nguaij5pss" path="res://assets2/gui/scenario_loading/loading_bar.png" id="6_6i8ji"]
+[ext_resource type="Texture2D" uid="uid://blds4o0kge3op" path="res://assets2/gui/common/btn_normal.png" id="7_nf2a5"]
+[ext_resource type="Texture2D" uid="uid://cuiqtpb8s617w" path="res://assets2/gui/common/btn_pressed.png" id="8_4oxpw"]
+[ext_resource type="FontFile" uid="uid://d4e46v2s5mef4" path="res://fonts/MiSans/MiSans-Demibold.ttf" id="8_uxji6"]
+[ext_resource type="Texture2D" uid="uid://btipwvdjnd2a0" path="res://assets2/gui/common/btn_hover.png" id="9_6i8ji"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ij28n"]
+shader = ExtResource("2_nf2a5")
+shader_parameter/progress = 0.0
+shader_parameter/gray_fade = 0.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_ldac0"]
+font = ExtResource("4_odghk")
+font_size = 24
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1tnva"]
+shader = ExtResource("5_4oxpw")
+shader_parameter/progress = 0.0
+shader_parameter/bar_color = Vector3(1, 0.12, 0.12)
+shader_parameter/bar_half = 0.06
+
+[sub_resource type="LabelSettings" id="LabelSettings_odghk"]
+font = ExtResource("8_uxji6")
+font_size = 24
+
+[node name="ScenarioLoadingScene" type="Node2D" unique_id=616673071]
+script = ExtResource("1_1pu3a")
+
+[node name="ScenarioLoading" type="Sprite2D" parent="." unique_id=844926443]
+material = SubResource("ShaderMaterial_ij28n")
+centered = false
+
+[node name="GameLogo" type="Sprite2D" parent="." unique_id=600276891]
+texture = ExtResource("3_uxji6")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=975708575]
+offset_top = 933.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_vertical = 0
+color = Color(0.039215688, 0.050980393, 0.07058824, 1)
+
+[node name="WordsLabel" type="Label" parent="ColorRect" unique_id=762638667]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "“有时是治愈，常常是帮助，总是去安慰” - 特鲁多"
+label_settings = SubResource("LabelSettings_ldac0")
+horizontal_alignment = 1
+
+[node name="ProgressBarRect" type="TextureRect" parent="ColorRect" unique_id=584082658]
+material = SubResource("ShaderMaterial_1tnva")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+texture = ExtResource("6_6i8ji")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="ColorRect" unique_id=541018389]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -39.0
+offset_right = 130.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_nf2a5")
+texture_pressed = ExtResource("8_4oxpw")
+texture_hover = ExtResource("9_6i8ji")
+texture_focused = ExtResource("9_6i8ji")
+
+[node name="Label" type="Label" parent="ColorRect/TextureButton" unique_id=737488062]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -11.5
+offset_right = 21.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "开始游戏"
+label_settings = SubResource("LabelSettings_odghk")

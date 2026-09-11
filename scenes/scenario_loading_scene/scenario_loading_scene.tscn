@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://y2txf7jjty15" path="res://assets2/gui/common/game_logo.png" id="3_qqh32"]
 [ext_resource type="Shader" uid="uid://cpch84ivttc1b" path="res://materials/shaders/loading_line_shader.gdshader" id="4_ldac0"]
 [ext_resource type="Texture2D" uid="uid://cn4nguaij5pss" path="res://assets2/gui/scenario_loading/loading_bar.png" id="5_1tnva"]
+[ext_resource type="Texture2D" uid="uid://blds4o0kge3op" path="res://assets2/gui/common/btn_normal.png" id="7_r5j2w"]
+[ext_resource type="FontFile" uid="uid://d4e46v2s5mef4" path="res://fonts/MiSans/MiSans-Demibold.ttf" id="8_pphx3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yxlms"]
 shader = ExtResource("2_q6oxn")
@@ -22,6 +24,16 @@ shader = ExtResource("4_ldac0")
 shader_parameter/progress = 0.0
 shader_parameter/bar_color = Vector3(1, 0.12, 0.12)
 shader_parameter/bar_half = 0.06
+
+[sub_resource type="InputEventKey" id="InputEventKey_r5j2w"]
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_pphx3"]
+events = [SubResource("InputEventKey_r5j2w")]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yx6cu"]
+font = ExtResource("8_pphx3")
+font_size = 24
 
 [node name="ScenarioLoadingTestScene" type="Control" unique_id=221261947]
 layout_mode = 3
@@ -78,25 +90,39 @@ grow_horizontal = 2
 texture = ExtResource("5_1tnva")
 expand_mode = 1
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer/ColorRect" unique_id=2071452944]
+[node name="StartButton" type="TextureButton" parent="VBoxContainer/ColorRect" unique_id=2137309222]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -130.0
+offset_top = -39.0
+offset_right = 130.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
+shortcut = SubResource("Shortcut_pphx3")
+texture_normal = ExtResource("7_r5j2w")
+texture_pressed = ExtResource("7_r5j2w")
+texture_hover = ExtResource("7_r5j2w")
 
-[node name="Label" type="Label" parent="VBoxContainer/ColorRect/TextureButton" unique_id=1686411831]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Label"
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/StartButton" unique_id=1476871494]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -11.5
+offset_right = 21.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "开始游戏"
+label_settings = SubResource("LabelSettings_yx6cu")
 
 [node name="GameLogo" type="Sprite2D" parent="." unique_id=292129683]
 texture = ExtResource("3_qqh32")
