@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://sdh0v3pw38b7" path="res://resources/scenarios/S1_assets/S1_loading.png" id="1_0t7hb"]
 [ext_resource type="Script" uid="uid://brijlmmyl0nsm" path="res://scripts/data/scenario_data.gd" id="1_ukq0w"]
 [ext_resource type="Texture2D" uid="uid://d0ckqjrppanj8" path="res://assets2/gui/scenario_selector/default_thumbnail.png" id="2_tppqg"]
+[ext_resource type="Texture2D" uid="uid://cxme66os23f6p" path="res://resources/scenarios/S1_assets/s1_backgroud.png" id="3_mmccc"]
 
 [resource]
 script = ExtResource("1_ukq0w")
@@ -11,4 +12,5 @@ display_name = "S1_NAME"
 description = "S1_DESC"
 difficulty = 1
 thumbnail = ExtResource("2_tppqg")
+selector_background = ExtResource("3_mmccc")
 loading_texture = ExtResource("1_0t7hb")

@@ -5,6 +5,9 @@
 [ext_resource type="Resource" uid="uid://tne525k8s4c1" path="res://resources/scenarios/S2_res.tres" id="3_8i2kj"]
 [ext_resource type="Resource" uid="uid://bsbv7lbtnpjj8" path="res://resources/scenarios/S3_res.tres" id="4_o4x1h"]
 [ext_resource type="Resource" uid="uid://cbtkigxern7t3" path="res://resources/scenarios/S4_res.tres" id="5_l503c"]
+[ext_resource type="Texture2D" uid="uid://cxme66os23f6p" path="res://resources/scenarios/S1_assets/s1_backgroud.png" id="6_l503c"]
+[ext_resource type="FontFile" uid="uid://d4e46v2s5mef4" path="res://fonts/MiSans/MiSans-Demibold.ttf" id="7_2rt8a"]
+[ext_resource type="FontFile" uid="uid://cdf4kb2fh0ltl" path="res://fonts/MiSans/MiSans-Regular.ttf" id="8_vumos"]
 
 [sub_resource type="Gradient" id="Gradient_l503c"]
 colors = PackedColorArray(0.023529412, 0.22352941, 0.43137255, 1, 0.039215688, 0.047058824, 0.0627451, 1)
@@ -12,6 +15,15 @@ colors = PackedColorArray(0.023529412, 0.22352941, 0.43137255, 1, 0.039215688, 0
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2rt8a"]
 gradient = SubResource("Gradient_l503c")
 fill_to = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fyqdt"]
+font = ExtResource("7_2rt8a")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_vumos"]
+font = ExtResource("8_vumos")
+font_size = 24
+font_color = Color(1, 1, 1, 0.7058824)
 
 [node name="ScenarioScene" type="Node2D" unique_id=763736946]
 script = ExtResource("1_7v2xp")
@@ -36,6 +48,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_2rt8a")
 
+[node name="ScenarioBG" type="TextureRect" parent="UILayer/Control" unique_id=1402269454]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_l503c")
+
 [node name="ScrollContainer" type="ScrollContainer" parent="UILayer/Control" unique_id=1897305229]
 layout_mode = 1
 anchors_preset = 14
@@ -54,3 +76,26 @@ vertical_scroll_mode = 0
 [node name="HBoxContainer" type="HBoxContainer" parent="UILayer/Control/ScrollContainer" unique_id=1448671447]
 layout_mode = 2
 theme_override_constants/separation = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/Control" unique_id=2094861387]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="UILayer/Control/VBoxContainer" unique_id=1139760295]
+layout_mode = 2
+text = "Select Scenario"
+label_settings = SubResource("LabelSettings_fyqdt")
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="UILayer/Control/VBoxContainer" unique_id=89396159]
+layout_mode = 2
+text = "Select Scenario"
+label_settings = SubResource("LabelSettings_vumos")
+horizontal_alignment = 1

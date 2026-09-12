@@ -6,6 +6,8 @@ const SCENARIO_ITEM := preload("res://scenes/scenario_selector_scene/components/
 
 @onready var scroll: ScrollContainer = $UILayer/Control/ScrollContainer
 @onready var row: HBoxContainer = $UILayer/Control/ScrollContainer/HBoxContainer
+@onready var title_label: Label = $UILayer/Control/VBoxContainer/TitleLabel
+@onready var description_label: Label = $UILayer/Control/VBoxContainer/DescriptionLabel
 
 var buttons: Array[Button] = []
 var current_index := 0
@@ -56,13 +58,17 @@ func select_level(index: int) -> void:
 	item.grab_focus()
 	item.set_selected_state()
 	scroll.ensure_control_visible(item)       # 自动滚动到可见区域
-
+	
 func _on_button_focus_entered(btn: ScenarioItem) -> void:
 	for i in buttons:
 		(i as ScenarioItem).set_normal_state()
 	btn.set_selected_state()
 	current_index = buttons.find(btn)
 	scroll.ensure_control_visible(btn)
+	
+	title_label.text = tr(btn.scenario_data.display_name)
+	description_label.text = tr(btn.scenario_data.description)
+
 
 func _on_button_mouse_entered(btn: ScenarioItem) -> void:
 	for i in buttons:
