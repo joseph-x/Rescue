@@ -5,30 +5,60 @@
 [ext_resource type="Resource" uid="uid://tne525k8s4c1" path="res://resources/scenarios/S2_res.tres" id="3_8i2kj"]
 [ext_resource type="Resource" uid="uid://bsbv7lbtnpjj8" path="res://resources/scenarios/S3_res.tres" id="4_o4x1h"]
 [ext_resource type="Resource" uid="uid://cbtkigxern7t3" path="res://resources/scenarios/S4_res.tres" id="5_l503c"]
-[ext_resource type="Texture2D" uid="uid://repuqo7kpb4x" path="res://assets2/gui/common/common_bg.png" id="6_l503c"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o4x1h"]
+load_path = "res://.godot/imported/common_bg@4x.png-e81c50913cbc9d6b679c4dff89e9dec1.ctex"
+
+[sub_resource type="Gradient" id="Gradient_l503c"]
+colors = PackedColorArray(0.023529412, 0.22352941, 0.43137255, 1, 0.039215688, 0.047058824, 0.0627451, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2rt8a"]
+gradient = SubResource("Gradient_l503c")
+fill_to = Vector2(0, 1)
 
 [node name="ScenarioScene" type="Node2D" unique_id=763736946]
 script = ExtResource("1_7v2xp")
 scenario_data_list = [ExtResource("2_g00hv"), ExtResource("3_8i2kj"), ExtResource("4_o4x1h"), ExtResource("5_l503c")]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=806967358]
+visible = false
 position = Vector2(960, 540)
-texture = ExtResource("6_l503c")
+texture = SubResource("CompressedTexture2D_o4x1h")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1897305229]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1154479414]
+
+[node name="Control" type="Control" parent="UILayer" unique_id=66436469]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorBG" type="TextureRect" parent="UILayer/Control" unique_id=454720379]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_2rt8a")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UILayer/Control" unique_id=1897305229]
+layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 24.0
-offset_top = 364.0
+offset_top = -176.0
 offset_right = 1920.0
-offset_bottom = 716.0
+offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=1448671447]
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/Control/ScrollContainer" unique_id=1448671447]
 layout_mode = 2
 theme_override_constants/separation = 24

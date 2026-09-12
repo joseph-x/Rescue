@@ -4,8 +4,8 @@ const SCENARIO_ITEM := preload("res://scenes/scenario_selector_scene/components/
 
 @export var scenario_data_list: Array = []
 
-@onready var scroll: ScrollContainer = $ScrollContainer
-@onready var row: HBoxContainer = $ScrollContainer/HBoxContainer
+@onready var scroll: ScrollContainer = $UILayer/Control/ScrollContainer
+@onready var row: HBoxContainer = $UILayer/Control/ScrollContainer/HBoxContainer
 
 var buttons: Array[Button] = []
 var current_index := 0
