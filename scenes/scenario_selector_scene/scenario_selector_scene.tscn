@@ -73,18 +73,23 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = -300.0
+offset_right = -72.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 12
 
 [node name="TitleLabel" type="Label" parent="UILayer/Control/VBoxContainer" unique_id=1139760295]
 layout_mode = 2
-text = "Select Scenario"
+text = "Selected Scenario"
 label_settings = SubResource("LabelSettings_fyqdt")
 horizontal_alignment = 1
 
 [node name="DescriptionLabel" type="Label" parent="UILayer/Control/VBoxContainer" unique_id=89396159]
+custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
-text = "Select Scenario"
+text = "Scenario Description"
 label_settings = SubResource("LabelSettings_vumos")
 horizontal_alignment = 1
+autowrap_mode = 1
