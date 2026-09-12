@@ -5,7 +5,6 @@
 [ext_resource type="Resource" uid="uid://tne525k8s4c1" path="res://resources/scenarios/S2_res.tres" id="3_8i2kj"]
 [ext_resource type="Resource" uid="uid://bsbv7lbtnpjj8" path="res://resources/scenarios/S3_res.tres" id="4_o4x1h"]
 [ext_resource type="Resource" uid="uid://cbtkigxern7t3" path="res://resources/scenarios/S4_res.tres" id="5_l503c"]
-[ext_resource type="Texture2D" uid="uid://cxme66os23f6p" path="res://resources/scenarios/S1_assets/s1_backgroud.png" id="6_l503c"]
 [ext_resource type="FontFile" uid="uid://d4e46v2s5mef4" path="res://fonts/MiSans/MiSans-Demibold.ttf" id="7_2rt8a"]
 [ext_resource type="FontFile" uid="uid://cdf4kb2fh0ltl" path="res://fonts/MiSans/MiSans-Regular.ttf" id="8_vumos"]
 
@@ -48,16 +47,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_2rt8a")
 
-[node name="ScenarioBG" type="TextureRect" parent="UILayer/Control" unique_id=1402269454]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_l503c")
-
 [node name="ScrollContainer" type="ScrollContainer" parent="UILayer/Control" unique_id=1897305229]
 layout_mode = 1
 anchors_preset = 14
@@ -66,7 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 24.0
 offset_top = -176.0
-offset_right = 1920.0
+offset_right = -24.0
 offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
