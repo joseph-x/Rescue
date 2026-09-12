@@ -6,9 +6,6 @@
 [ext_resource type="Resource" uid="uid://bsbv7lbtnpjj8" path="res://resources/scenarios/S3_res.tres" id="4_o4x1h"]
 [ext_resource type="Resource" uid="uid://cbtkigxern7t3" path="res://resources/scenarios/S4_res.tres" id="5_l503c"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o4x1h"]
-load_path = "res://.godot/imported/common_bg@4x.png-e81c50913cbc9d6b679c4dff89e9dec1.ctex"
-
 [sub_resource type="Gradient" id="Gradient_l503c"]
 colors = PackedColorArray(0.023529412, 0.22352941, 0.43137255, 1, 0.039215688, 0.047058824, 0.0627451, 1)
 
@@ -19,11 +16,6 @@ fill_to = Vector2(0, 1)
 [node name="ScenarioScene" type="Node2D" unique_id=763736946]
 script = ExtResource("1_7v2xp")
 scenario_data_list = [ExtResource("2_g00hv"), ExtResource("3_8i2kj"), ExtResource("4_o4x1h"), ExtResource("5_l503c")]
-
-[node name="Background" type="Sprite2D" parent="." unique_id=806967358]
-visible = false
-position = Vector2(960, 540)
-texture = SubResource("CompressedTexture2D_o4x1h")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1154479414]
 
