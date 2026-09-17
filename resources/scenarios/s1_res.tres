@@ -12,3 +12,4 @@ description = "S1_DESC"
 difficulty = 1
 thumbnail = ExtResource("2_tppqg")
 loading_texture = ExtResource("1_0t7hb")
+map_path = "res://resources/scenarios/S1_assets/S1_map.json"

@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dib08y5ftg6u8"]
+
+[ext_resource type="FontFile" uid="uid://cdf4kb2fh0ltl" path="res://fonts/MiSans/MiSans-Regular.ttf" id="1_6eb61"]
+
+[resource]
+font = ExtResource("1_6eb61")
+font_color = Color(1, 1, 1, 0.6)

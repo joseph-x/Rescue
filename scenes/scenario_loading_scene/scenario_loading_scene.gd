@@ -38,7 +38,7 @@ func _process(_delta: float) -> void:
 	# if status == ResourceLoader.THREAD_LOAD_LOADED:
 		# get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(scene_path))
 	
-	load_progress = load_progress + 0.1 * _delta
+	load_progress = load_progress + 0.5 * _delta
 	
 	if load_progress < 1.0:
 		mat.set_shader_parameter("progress", load_progress)

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cswro7niy0ege"]
+
+[ext_resource type="Script" uid="uid://f57ytf0d5opg" path="res://scenes/scenario_gameplay_scene/components/info_panel.gd" id="1_d0aeh"]
+[ext_resource type="LabelSettings" uid="uid://dw65anfkwgg6" path="res://fonts/body_18.tres" id="2_d0aeh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pd4vp"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="InfoPanel" type="Panel" unique_id=913216001]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -318.0
+offset_top = -46.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pd4vp")
+script = ExtResource("1_d0aeh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1779379397]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -20.0
+offset_right = 181.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="CityNameLabel" type="Label" parent="HBoxContainer" unique_id=458098260]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "城市"
+label_settings = ExtResource("2_d0aeh")
+
+[node name="WeatherLabel" type="Label" parent="HBoxContainer" unique_id=1645535710]
+unique_name_in_owner = true
+layout_mode = 2
+text = "天气"
+label_settings = ExtResource("2_d0aeh")
+
+[node name="TimeLabel" type="Label" parent="HBoxContainer" unique_id=286539423]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "00:00"
+label_settings = ExtResource("2_d0aeh")
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=837015276]
+layout_mode = 2
+text = "P"
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer" unique_id=1629794161]
+custom_minimum_size = Vector2(100, 24)
+layout_mode = 2
+size_flags_vertical = 4
+step = 10.0
+value = 50.0
+show_percentage = false
