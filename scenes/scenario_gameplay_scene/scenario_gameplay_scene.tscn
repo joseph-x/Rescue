@@ -4,9 +4,17 @@
 [ext_resource type="Script" uid="uid://blh8lqqmtqoo5" path="res://scripts/map/city_manager.gd" id="2_bajcm"]
 [ext_resource type="Texture2D" uid="uid://blds4o0kge3op" path="res://assets2/gui/common/btn_normal.png" id="2_bqiv4"]
 [ext_resource type="Texture2D" uid="uid://cuiqtpb8s617w" path="res://assets2/gui/common/btn_pressed.png" id="3_1x3rn"]
+[ext_resource type="Script" uid="uid://cwp1h85qkm06k" path="res://scripts/map/camera_controller.gd" id="3_uw1k6"]
 [ext_resource type="Texture2D" uid="uid://btipwvdjnd2a0" path="res://assets2/gui/common/btn_hover.png" id="4_pd4vp"]
+[ext_resource type="Shader" uid="uid://dgj31xvsve0p5" path="res://materials/shaders/map_blue_bg_shader.gdshader" id="4_t1tlb"]
 [ext_resource type="PackedScene" uid="uid://cswro7niy0ege" path="res://scenes/scenario_gameplay_scene/components/info_panel.tscn" id="5_t03lb"]
 [ext_resource type="Script" uid="uid://b2hfy47uc4fs7" path="res://scripts/framework/game_time_manager.gd" id="6_t03lb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7l2kf"]
+shader = ExtResource("4_t1tlb")
+shader_parameter/top_color = Color(0, 0.4, 0.8, 1)
+shader_parameter/bottom_color = Color(0.039215688, 0.047058824, 0.0627451, 1)
+shader_parameter/alpha = 0.3
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cxkan"]
 texture = ExtResource("2_bqiv4")
@@ -35,18 +43,33 @@ bg_color = Color(1, 0.090162076, 0.8352319, 1)
 [node name="ScenarioGameplayScene" type="Node2D" unique_id=1061772817]
 script = ExtResource("1_ds6xc")
 
-[node name="GameplayLayer" type="CanvasLayer" parent="." unique_id=988968833]
-
-[node name="CityManager" type="Node2D" parent="GameplayLayer" unique_id=781026428]
+[node name="CityManager" type="Node2D" parent="." unique_id=781026428]
 unique_name_in_owner = true
 script = ExtResource("2_bajcm")
 
-[node name="Map" type="Node2D" parent="GameplayLayer/CityManager" unique_id=768517236]
+[node name="Map" type="Node2D" parent="CityManager" unique_id=768517236]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=564968319]
 zoom = Vector2(0.5, 0.5)
+limit_enabled = false
+script = ExtResource("3_uw1k6")
+min_zoom = 0.1
+
+[node name="CameraEffect" type="CanvasLayer" parent="." unique_id=1913803899]
+layer = 5
+
+[node name="ColorRect" type="ColorRect" parent="CameraEffect" unique_id=1834061690]
+material = SubResource("ShaderMaterial_7l2kf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.15187526, 0.43065637, 0.68522054, 0.39215687)
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1313873557]
+layer = 10
 
 [node name="Button" type="Button" parent="UILayer" unique_id=1441610104]
 visible = false

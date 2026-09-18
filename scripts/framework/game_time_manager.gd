@@ -16,7 +16,7 @@ var minute := 0
 
 var _accumulator := 0.0
 var _paused := false
-var time_scale := 1.0
+var time_scale := 0.1
 
 
 # 游戏速度倍率
@@ -67,4 +67,5 @@ func set_time_scale(value: float):
 	time_scale = max(value, 0.0)
 
 func get_time_text() -> String:
-	return "%02d:%02d:%02d" % [day, hour, minute]
+	# return "%02d:%02d:%02d" % [day, hour, minute]
+	return "%02d:%02d" % [hour, minute]

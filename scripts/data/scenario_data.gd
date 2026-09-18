@@ -12,11 +12,6 @@ class_name ScenarioData
 @export var diseases: Array
 @export_file("*.json") var map_path: String
 
-const NAME_SEGMENTS = "segments"
-const NAME_BUILDINGS = "buildings"
-
-var segments_data: Array
-var buildings_data: Array
 
 func get_display_name() -> String:
 	return tr(display_name)
@@ -24,6 +19,12 @@ func get_display_name() -> String:
 func get_display_description() -> String:
 	return tr(description)
 
+#region map
+const NAME_SEGMENTS = "segments"
+const NAME_BUILDINGS = "buildings"
+
+var segments_data: Array
+var buildings_data: Array
 
 func load_map_data() -> void:
 	if not FileAccess.file_exists(map_path):
@@ -47,3 +48,5 @@ func load_map_data() -> void:
 	
 	segments_data = result.get(NAME_SEGMENTS,[])
 	buildings_data = result.get(NAME_BUILDINGS, [])
+
+#endregion
