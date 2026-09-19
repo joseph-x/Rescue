@@ -51,14 +51,15 @@ layout_mode = 2
 text = "00:00"
 label_settings = ExtResource("2_d0aeh")
 
-[node name="Button" type="Button" parent="HBoxContainer" unique_id=837015276]
+[node name="TimeButton" type="Button" parent="HBoxContainer" unique_id=837015276]
 layout_mode = 2
 text = "P"
 
 [node name="ProgressBar" type="ProgressBar" parent="HBoxContainer" unique_id=1629794161]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 24)
 layout_mode = 2
 size_flags_vertical = 4
-step = 10.0
+step = 5.0
 value = 50.0
 show_percentage = false

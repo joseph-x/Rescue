@@ -9,6 +9,7 @@
 [ext_resource type="Shader" uid="uid://dgj31xvsve0p5" path="res://materials/shaders/map_blue_bg_shader.gdshader" id="4_t1tlb"]
 [ext_resource type="PackedScene" uid="uid://cswro7niy0ege" path="res://scenes/scenario_gameplay_scene/components/info_panel.tscn" id="5_t03lb"]
 [ext_resource type="Script" uid="uid://b2hfy47uc4fs7" path="res://scripts/framework/game_time_manager.gd" id="6_t03lb"]
+[ext_resource type="Script" uid="uid://df2gthmppya60" path="res://scripts/framework/game_event_manager.gd" id="10_7l2kf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7l2kf"]
 shader = ExtResource("4_t1tlb")
@@ -50,7 +51,7 @@ script = ExtResource("2_bajcm")
 [node name="Map" type="Node2D" parent="CityManager" unique_id=768517236]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=564968319]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.2, 0.2)
 limit_enabled = false
 script = ExtResource("3_uw1k6")
 min_zoom = 0.1
@@ -86,3 +87,6 @@ text = "Button"
 [node name="TimeManager" type="Node2D" parent="." unique_id=380024973]
 unique_name_in_owner = true
 script = ExtResource("6_t03lb")
+
+[node name="EventManager" type="Node2D" parent="." unique_id=2043011724]
+script = ExtResource("10_7l2kf")

@@ -13,7 +13,21 @@ signal credit_changed(amount: int)
 signal money_changed(amount: int)
 
 # 时间
-signal day_passed
+#region Time Signal
+## 时间变化
+signal time_changed(day:int, hour:int, minute:int, second:int)
+
+## 时间结束
+signal time_finished()
+
+## 时间进展
+signal time_progress(progress: float)
+
+## 时间速率变化
+signal time_scale_changed(value: float)
+#endregion
+
+
 
 # 任务
 signal quest_started(quest: Quest)
