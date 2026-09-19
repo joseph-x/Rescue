@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MedicalEventDefinition" format=3 uid="uid://cpgulkhw78dcq"]
+
+[ext_resource type="Script" uid="uid://bmvqw7cdt4wmk" path="res://scripts/data/medical_event_definition.gd" id="1_ud52j"]
+
+[resource]
+script = ExtResource("1_ud52j")
+event_id = &"heart_attack"
+display_name = "疑似心脏病发作"
+min_age = 40
+max_age = 85
+hidden_diagnosis = &"acute_myocardial_infarction"
+initial_information = {
+&"breathing_difficulty": true,
+&"chest_pain": true,
+&"conscious": true
+}

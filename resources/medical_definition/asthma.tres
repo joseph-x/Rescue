@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MedicalEventDefinition" format=3 uid="uid://cgvs6m3jttitk"]
+
+[ext_resource type="Script" uid="uid://bmvqw7cdt4wmk" path="res://scripts/data/medical_event_definition.gd" id="1_q85gl"]
+
+[resource]
+script = ExtResource("1_q85gl")
+event_id = &"asthma_attack"
+display_name = "严重哮喘发作"
+min_age = 12
+max_age = 70
+hidden_diagnosis = &"acute_asthma_exacerbation"
+initial_information = {
+&"breathing_difficulty": true,
+&"conscious": true,
+&"wheezing": true
+}
+deterioration_after = 120.0
+critical_after = 300.0
+cardiac_arrest_after = 480.0
